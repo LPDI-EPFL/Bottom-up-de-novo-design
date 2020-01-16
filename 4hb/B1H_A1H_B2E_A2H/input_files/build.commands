@@ -1,0 +1,21 @@
+-fold_from_loops:target:pose ../D25_5cwj39.pdb
+-fold_from_loops:target:chain A
+-fold_from_loops:target:pdb_count
+-fold_from_loops:target:loops ../target.loops
+-fold_from_loops:target:order 1 2
+-in:file:s ../D25_5cwj39.pdb
+-in:file:fasta sequence.fa
+-in:file:psipred_ss2 structure.ss2
+-loops:loop_file design.loops
+-fold_from_loops:scaffold:nopose
+-fold_from_loops:scaffold:cst_file constraints.cst
+-fold_from_loops:native_ca_cst
+-in:ignore_unrecognized_res
+-run:intermediate_structures
+-out:nstruct 100
+-fold_from_loops:score:hb_srbb 2
+-fold_from_loops:score:hb_lrbb 2
+-fold_from_loops:score:rsigma 2
+-fold_from_loops:score:ss_pair 2
+-out:file:silent_struct_type binary
+-out:overwrite
