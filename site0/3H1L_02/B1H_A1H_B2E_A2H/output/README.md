@@ -18,5 +18,5 @@ Following manual inspection, we remodeled and shortened the connecting loops bet
 | 76      | QAVLMFW     |
 | 80      | ACIFW       |
 
-
+The following animation shows the best scoring decoy, which was chosen as a template to select critical core positions for combinatorial sampling. Selected positions encoded in the combinatorial library are highlighted in yellow, the site 0 epitope shown in purple. 
 ![](test.gif) 
