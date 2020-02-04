@@ -1,0 +1,632 @@
+{
+  "layers": [
+    [
+      {
+        "shift_z": 0,
+        "shift_x": 0,
+        "shift_y": -6,
+        "length": 20,
+        "tilt_z": 0,
+        "tilt_x": 0.0,
+        "tilt_y": 0,
+        "type": "H",
+        "id": "A1H"
+      },
+      {
+        "shift_z": 0,
+        "shift_x": 11.0,
+        "shift_y": -6,
+        "length": 20,
+        "tilt_z": 0,
+        "tilt_x": 0.0,
+        "tilt_y": 0,
+        "type": "H",
+        "id": "A2H"
+      }
+    ],
+    [
+      {
+        "type": "C",
+        "shift_z": 11,
+        "shift_x": 0.0,
+        "shift_y": 0.0,
+        "length": 8,
+        "edge": -1,
+        "static": 1,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "ref": "d25_1.loop",
+        "id": "B1C"
+      },
+      {
+        "type": "H",
+        "shift_z": 11,
+        "shift_x": 10.681520208082091,
+        "shift_y": 0.0,
+        "length": 17,
+        "static": 1,
+        "tilt_x": 0.0,
+        "tilt_y": 0.0,
+        "tilt_z": 0.0,
+        "ref": "d25_1.helix",
+        "id": "B2H"
+      }
+    ]
+  ],
+  "forms": [
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "B1C_A1H_A2H_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_A1H_A2H_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /><polygon fill=\"lightgreen\" id=\"B1C_A1H_A2H_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A1H_A2H_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A1H_A2H_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_A1H_A2H_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "B2H_A2H_A1H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_A2H_A1H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_A2H_A1H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A2H_A1H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A2H_A1H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_A2H_A1H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 0
+      },
+      "id": "B1C_A2H_A1H_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_A2H_A1H_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /><polygon fill=\"lightgreen\" id=\"B1C_A2H_A1H_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A2H_A1H_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A2H_A1H_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_A2H_A1H_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 0
+      },
+      "id": "B2H_A1H_A2H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_A1H_A2H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_A1H_A2H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A1H_A2H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A1H_A2H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_A1H_A2H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "B1C_B2H_A2H_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_B2H_A2H_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /><polygon fill=\"lightgreen\" id=\"B1C_B2H_A2H_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_B2H_A2H_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_B2H_A2H_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_B2H_A2H_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "A1H_A2H_B2H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_A2H_B2H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_A2H_B2H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_A2H_B2H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_A2H_B2H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_A2H_B2H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 0,
+        "intersections": 0
+      },
+      "id": "B1C_A2H_B2H_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_A2H_B2H_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /><polygon fill=\"lightgreen\" id=\"B1C_A2H_B2H_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A2H_B2H_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_A2H_B2H_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A2H_B2H_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 0,
+        "intersections": 0
+      },
+      "id": "A1H_B2H_A2H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_B2H_A2H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B2H_A2H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_B2H_A2H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B2H_A2H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_B2H_A2H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "B1C_B2H_A1H_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_B2H_A1H_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /><polygon fill=\"lightgreen\" id=\"B1C_B2H_A1H_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_B2H_A1H_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_B2H_A1H_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_B2H_A1H_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "A2H_A1H_B2H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_A1H_B2H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_A1H_B2H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_A1H_B2H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_A1H_B2H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_A1H_B2H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "B1C_A1H_B2H_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B1C_A1H_B2H_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /><polygon fill=\"lightgreen\" id=\"B1C_A1H_B2H_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A1H_B2H_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B1C_A1H_B2H_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B1C_A1H_B2H_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 0,
+        "intersections": 1
+      },
+      "id": "A2H_B2H_A1H_B1C",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_B2H_A1H_B1C__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B2H_A1H_B1C__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_B2H_A1H_B1C__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B2H_A1H_B1C__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_B2H_A1H_B1C__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"73.3333333333\" y2=\"119.333333333\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "B2H_B1C_A2H_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_B1C_A2H_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_B1C_A2H_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_B1C_A2H_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_B1C_A2H_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_B1C_A2H_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "A1H_A2H_B1C_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_A2H_B1C_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_A2H_B1C_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_A2H_B1C_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_A2H_B1C_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_A2H_B1C_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": true,
+      "obeys": {
+        "directions": 1,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "B2H_A2H_B1C_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_A2H_B1C_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_A2H_B1C_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A2H_B1C_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_A2H_B1C_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A2H_B1C_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": true,
+      "obeys": {
+        "directions": 1,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "A1H_B1C_A2H_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_B1C_A2H_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B1C_A2H_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_B1C_A2H_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B1C_A2H_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_B1C_A2H_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "B2H_B1C_A1H_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_B1C_A1H_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_B1C_A1H_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_B1C_A1H_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_B1C_A1H_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_B1C_A1H_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"0.0\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "A2H_A1H_B1C_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_A1H_B1C_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_A1H_B1C_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_A1H_B1C_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_A1H_B1C_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_A1H_B1C_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 1,
+        "intersections": 0
+      },
+      "id": "B2H_A1H_B1C_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"B2H_A1H_B1C_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"117.210134721\" x2=\"71.2101347205\" y1=\"119.333333333\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"B2H_A1H_B1C_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A1H_B1C_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"B2H_A1H_B1C_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"B2H_A1H_B1C_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /></g></svg>",
+      "up": [
+        1,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 1,
+        "edges": 1,
+        "intersections": 0
+      },
+      "id": "A2H_B1C_A1H_B2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_B1C_A1H_B2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B1C_A1H_B2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_B1C_A1H_B2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B1C_A1H_B2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_B1C_A1H_B2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"117.210134721\" y1=\"73.3333333333\" y2=\"119.333333333\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "A1H_B1C_B2H_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_B1C_B2H_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B1C_B2H_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_B1C_B2H_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_B1C_B2H_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B1C_B2H_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 1
+      },
+      "id": "A2H_B2H_B1C_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_B2H_B1C_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B2H_B1C_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_B2H_B1C_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_B2H_B1C_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B2H_B1C_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 0
+      },
+      "id": "A1H_B2H_B1C_A2H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A1H_B2H_B1C_A2H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"73.3333333333\" y1=\"73.3333333333\" y2=\"0.0\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B2H_B1C_A2H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A1H_B2H_B1C_A2H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A1H_B2H_B1C_A2H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A1H_B2H_B1C_A2H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"-46.0\" x2=\"0.0\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"119.333333333\" y1=\"0.0\" y2=\"-46.0\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "do": false,
+      "obeys": {
+        "directions": 0,
+        "edges": 1,
+        "intersections": 0
+      },
+      "id": "A2H_B1C_B2H_A1H",
+      "svg": "<svg baseProfile=\"full\" height=\"211.333333333\" id=\"A2H_B1C_B2H_A1H__image\" version=\"1.1\" width=\"211.333333333\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:ev=\"http://www.w3.org/2001/xml-events\" xmlns:xlink=\"http://www.w3.org/1999/xlink\"><defs /><g transform=\"translate(69.0,69.0)\"><line stroke=\"black\" stroke-width=\"4\" x1=\"73.3333333333\" x2=\"0.0\" y1=\"0.0\" y2=\"73.3333333333\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"71.2101347205\" x2=\"0.0\" y1=\"73.3333333333\" y2=\"0.0\" /><circle cx=\"73.3333333333\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B1C_B2H_A1H__A2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><polygon fill=\"lightgreen\" id=\"A2H_B1C_B2H_A1H__B1C\" points=\"-7.66666666667,-23.0 7.66666666667,-23.0 7.66666666667,-7.66666666667 23.0,-7.66666666667 23.0,7.66666666667 7.66666666667,7.66666666667 7.66666666667,23.0 -7.66666666667,23.0 -7.66666666667,7.66666666667 -23.0,7.66666666667 -23.0,-7.66666666667 -7.66666666667,-7.66666666667\" stroke=\"black\" stroke-width=\"2\" transform=\"translate(0.0,73.3333333333) rotate(45,0.0,0.0)\" /><circle cx=\"71.2101347205\" cy=\"73.3333333333\" fill=\"gainsboro\" id=\"A2H_B1C_B2H_A1H__B2H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><circle cx=\"0.0\" cy=\"0.0\" fill=\"cornflowerblue\" id=\"A2H_B1C_B2H_A1H__A1H\" r=\"23.0\" stroke=\"black\" stroke-width=\"2\" /><line stroke=\"darkblue\" stroke-width=\"4\" x1=\"119.333333333\" x2=\"73.3333333333\" y1=\"-46.0\" y2=\"0.0\" /><line stroke=\"black\" stroke-width=\"4\" x1=\"0.0\" x2=\"71.2101347205\" y1=\"73.3333333333\" y2=\"73.3333333333\" /><line stroke=\"darkred\" stroke-width=\"4\" x1=\"0.0\" x2=\"-46.0\" y1=\"0.0\" y2=\"-46.0\" /></g></svg>",
+      "up": [
+        0,
+        1,
+        0,
+        1
+      ]
+    }
+  ],
+  "config": {
+    "status": 4,
+    "default_x_h": 11,
+    "name": "Topo2H_rev",
+    "default_z": 11
+  },
+  "motifs": [
+    {
+      "core": [
+        25.650951002227195,
+        178.45639198218254,
+        40.4629242761693
+      ],
+      "chain": "F",
+      "segments": [
+        {
+          "sequence": [
+            "SER",
+            "ASN",
+            "ILE",
+            "LYS",
+            "GLU",
+            "ASN",
+            "LYS",
+            "CYS"
+          ],
+          "end": 69,
+          "ini": 62,
+          "coordinates": [
+            [
+              3.3588780610546878,
+              -9.4067689350419705,
+              -0.35397764712503621
+            ],
+            [
+              -0.0059388313316643959,
+              -7.6650272848912904,
+              -0.0033634648080250185
+            ],
+            [
+              0.15809744685283889,
+              -3.890672462895381,
+              0.24023205468194803
+            ],
+            [
+              -2.125429409556471,
+              -1.5374834292871165,
+              2.1536369956610475
+            ],
+            [
+              -2.0116005028675801,
+              1.1253150146572679,
+              1.1618444634601977
+            ],
+            [
+              0.026414594533370028,
+              3.3376141630959384,
+              -1.1668575227508606
+            ],
+            [
+              -1.0579157777412931,
+              6.8351296863934543,
+              -0.15217983596770213
+            ],
+            [
+              1.6574944190561069,
+              8.8084487419977275,
+              -1.9257472488160992
+            ]
+          ],
+          "id": "loop"
+        },
+        {
+          "sequence": [
+            "LYS",
+            "ASN",
+            "TYR",
+            "ILE",
+            "ASP",
+            "LYS",
+            "GLN",
+            "LEU",
+            "LEU",
+            "PRO",
+            "ILE",
+            "VAL",
+            "ASN",
+            "LYS",
+            "GLN",
+            "SER",
+            "CYS"
+          ],
+          "end": 212,
+          "ini": 196,
+          "coordinates": [
+            [
+              -3.048665845780965,
+              -10.762721592741123,
+              -0.82741292935738397
+            ],
+            [
+              0.36614856829496523,
+              -9.9054293166433336,
+              0.61630950614133762
+            ],
+            [
+              1.4899511893558053,
+              -7.6926946504334666,
+              -2.267401811908702
+            ],
+            [
+              -1.661271443072345,
+              -5.5797007301954693,
+              -2.1319927505064307
+            ],
+            [
+              -1.9607279369954829,
+              -5.76525684167283,
+              1.669420899406016
+            ],
+            [
+              1.6280507338357575,
+              -5.2078728944231791,
+              2.8037739252031852
+            ],
+            [
+              3.367174557087484,
+              -3.5866924457106775,
+              -0.17013398865537077
+            ],
+            [
+              0.92277111821185986,
+              -1.6672459696985737,
+              -2.3712139630628877
+            ],
+            [
+              -1.5770209818656689,
+              -0.20615429134200189,
+              0.11426759265768222
+            ],
+            [
+              1.1377625131748967,
+              1.1331823924490538,
+              2.4490073688440903
+            ],
+            [
+              2.763259219757396,
+              2.9417172057492347,
+              -0.49702187167114814
+            ],
+            [
+              -0.52793584455807485,
+              4.3321784126233167,
+              -1.8240929627599995
+            ],
+            [
+              -1.7783409710674205,
+              5.925747837574197,
+              1.4150813930691017
+            ],
+            [
+              1.679594735621615,
+              7.2481609700767615,
+              2.2753587642638435
+            ],
+            [
+              1.8893325443830431,
+              10.514179676856545,
+              0.30797830829188166
+            ],
+            [
+              -1.7474636278916724,
+              11.554499945778035,
+              0.54133927203495114
+            ],
+            [
+              -2.9426185284911792,
+              9.1175467977248932,
+              -2.0568545463255612
+            ]
+          ],
+          "id": "helix"
+        }
+      ],
+      "pdbfile": "4jhw.pdb",
+      "lookZ": 1,
+      "id": "d25_1"
+    }
+  ]
+}
