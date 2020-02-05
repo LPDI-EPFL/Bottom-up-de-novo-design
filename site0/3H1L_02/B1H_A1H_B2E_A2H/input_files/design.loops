@@ -1,0 +1,3 @@
+#LOOP start end cutpoint skip-rate extend
+LOOP 2 22 0 0.0 1
+LOOP 46 60 0 0.0 1

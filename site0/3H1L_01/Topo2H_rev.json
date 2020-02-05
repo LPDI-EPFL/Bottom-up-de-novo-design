@@ -1,0 +1,53 @@
+{
+  "config": {
+    "name": "Topo2H_rev",
+    "default_z": 11,
+    "default_x_h": 11
+  },
+  "layers" : [
+    [
+      {
+        "type" : "H",
+        "length" : 20,
+	"shift_x" : 0,
+	"shift_y" : -6,  
+	"tilt_y": 0,
+	"tilt_z": 0
+      },
+       
+	{"type" : "H",
+        "length" : 20,
+	"shift_x" : 11,
+	"shift_y": -6, 
+	"tilt_y": 0,
+"tilt_z": 0}
+    ],
+    [      {
+        "type" : "C",
+        "edge": -1,
+        "ref": "d25_1.loop"
+      },
+	{"type" : "H",
+        "ref": "d25_1.helix"}
+    ]
+  ],
+  "motifs": [
+    {
+      "id": "d25_1",
+      "pdbfile": "4jhw.pdb",
+      "chain": "F",
+      "segments": [
+        {
+          "ini": 62,
+          "end": 69,
+          "id": "loop"
+        },
+        {
+          "ini": 196,
+          "end": 212,
+          "id": "helix"
+        }
+      ]
+    }
+  ]
+}
