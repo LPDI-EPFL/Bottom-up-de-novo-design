@@ -1,5 +1,5 @@
 # 3H1L_02 folding and design 
-Using the provided input files, the 3H1L_02 topology was built and folded using Rosetta FunFolDes, generating approximately 20,000 decoys(./4hb_folding_design_scores.csv). The top 100 decoys were selected according to overall Rosetta energy. 
+Using the provided input files, the 3H1L_02 topology was built and folded using Rosetta FunFolDes, generating approximately 20,000 [decoys](./4hb_folding_design_scores.csv). The top 100 decoys were selected according to overall Rosetta energy. 
 Following manual inspection, we remodeled and shortened the connecting loops between the different helices, in particular between residues 22-25, 41-47 and 60-67 by a total of 4 residues. The shortened template subsequently served as template for a second round of folding and constrained sequence design using the provided script. Based on an ensemble of the 50 best decoys according to total energy, we selected 12 core positions, including 4 potential positions for disulfide formation, and built a sequence library for combinatorial sampling of a restricted set of amino acids for the selected positions. 
 
 # 3H1L_02 library design and testing 
