@@ -4,5 +4,5 @@ In the designed connectivity, the order of the two epitope segments is reversed,
 The topology was assembled using TopoBuilder using these [input files](./input_files). After folding and design using Rosetta FunFolDes, the best designs were filtered according to overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
 For experimental testing, we designed a combinatorial library sampling a defined diversity in 12 critical core positions, as detailed [here](./output/4hb_library_codons_positions.xlsx). 
 The library was screened using yeast surface display followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
-# THIS HAS TO BE FIXED - the models were extensively relaxed and we may want to show here the ones after FunFolDes, similar to what is shown in the main figure
+
 The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models).
