@@ -4,7 +4,64 @@ To accommodate the antigenic site 0 (RSVF structure: PDB DI 4jhw, residues 196-2
 ![](Topo2H.png)
 
 
-Following a first round of folding (see [output](./A1H_B1C_A2H_B2H/out)), we selected one of the best decoys according to total rosetta energy and optimized the loop connections using Rosetta Remodel. A blueprint file to build the connecting loops can be found [here](./optimization/3H1L.blueprint). 
+```
+{
+  "config": {
+    "name": "Topo2H_rev",
+    "default_z": 11,
+    "default_x_h": 11
+  },
+  "layers" : [
+    [
+      {
+        "type" : "H",
+        "length" : 20,
+	"shift_x" : 0,
+	"shift_y" : -6,  
+	"tilt_y": 0,
+	"tilt_z": 0
+      },
+       
+	{"type" : "H",
+        "length" : 20,
+	"shift_x" : 11,
+	"shift_y": -6, 
+	"tilt_y": 0,
+"tilt_z": 0}
+    ],
+    [      {
+        "type" : "C",
+        "edge": -1,
+        "ref": "d25_1.loop"
+      },
+	{"type" : "H",
+        "ref": "d25_1.helix"}
+    ]
+  ],
+  "motifs": [
+    {
+      "id": "d25_1",
+      "pdbfile": "4jhw.pdb",
+      "chain": "F",
+      "segments": [
+        {
+          "ini": 62,
+          "end": 69,
+          "id": "loop"
+        },
+        {
+          "ini": 196,
+          "end": 212,
+          "id": "helix"
+        }
+      ]
+    }
+  ]
+}
+```
+
+
+Following a first round of folding (see [output](./A1H_B1C_A2H_B2H/out)), we selected one of the best decoys according to total rosetta energy and optimized the loop connections using Rosetta Remodel. A blueprint file to build the connecting loops can be found [here](./3H1L.blueprint). 
 For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel, use: 
 ```
 PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 3H1L_01_remodel_input.pdb  -remodel:blueprint 3H1L_01.remodel.blueprint -nstruct 100 -remodel:use_pose_relax true -ex1 -ex2 
