@@ -1,0 +1,183 @@
+<ROSETTASCRIPTS>
+
+<SCOREFXNS>
+<ScoreFunction name="centroid" weights="cen_std" patch="score4L" >
+	<Reweight scoretype="atom_pair_constraint" weight="2.0" />
+        <Reweight scoretype="angle_constraint" weight="2.0" />
+        <Reweight scoretype="dihedral_constraint" weight="2.0" />
+	<Reweight scoretype="chainbreak" weight="2.0"/>
+    	<Reweight scoretype="linear_chainbreak" weight="2.0"/>
+    	<Reweight scoretype="overlap_chainbreak" weight="2.0"/>
+</ScoreFunction>
+<ScoreFunction name="fullatom" weights="ref2015" >
+        <Reweight scoretype="atom_pair_constraint" weight="2.0" />
+        <Reweight scoretype="angle_constraint" weight="2.0" />
+        <Reweight scoretype="dihedral_constraint" weight="2.0" />
+<Reweight scoretype="chainbreak" weight="2.0"/>
+        <Reweight scoretype="linear_chainbreak" weight="2.0"/>
+</ScoreFunction>
+<ScoreFunction name="SFXN1" weights="ref2015"> 
+	<Reweight scoretype="aa_composition" weight="1.0" />
+    	<Reweight scoretype="p_aa_pp" weight="0.8" />
+    	<Reweight scoretype="atom_pair_constraint" weight="2.0" />
+    	<Reweight scoretype="rama" weight="0.35" />
+<Reweight scoretype="chainbreak" weight="2.0"/>
+        <Reweight scoretype="linear_chainbreak" weight="2.0"/>
+</ScoreFunction>
+</SCOREFXNS>
+
+  <RESIDUE_SELECTORS>
+    <xi:include href="PATH/selectors.xml" />    # Standard FFL ResidueSelectors.
+    <Index name="motif1" resnums="77A-93A" />
+    <Index name="motif2" resnums="35A-41A" />
+    <Or name="insertion" selectors="motif1,motif2" />
+	<Not name="!insertion" selector="insertion" />      # Placement of the motif (region we remove).
+    <Chain name="chA" chains="A" />                   # Template Chain (there can only be one!).
+    <Not name="!chA" selector="chA" />
+
+    <Index name="query_motif1" resnums="196F-212F" />
+    <Index name="query_motif2" resnums="63F-69F" />  # Functional Motif of interest.
+    <Or name="query_motif" selectors="query_motif1,query_motif2" />   
+    <Chain name="chP" chains="F" />
+	<And name="chA_insert" selectors="chA,!insertion" />
+
+  <Index name="epitope1" resnums="77F-93F" />
+    <Index name="epitope2" resnums="35F-41F" />
+    <Or name="full_epitope" selectors="epitope1,epitope2" />
+        <Not name="!full_epitope" selector="full_epitope" />      # Placement of the motif (region we remove).
+    <Chain name="chA2" chains="F" />                   # Template Chain (there can only be one!).
+    <Not name="!chA2" selector="chA2" />
+	
+
+
+    <SecondaryStructure name="helix" ss="H" use_dssp="1" />
+    <SecondaryStructure name="strand" ss="E" use_dssp="1" />
+
+    <Layer name="surface" select_surface="true" />
+    <Layer name="boundary" select_boundary="true" />
+    <Layer name="core" select_core="true" ball_radius="2.0" core_cutoff="4.2" use_sidechain_neighbors="true" />
+
+  </RESIDUE_SELECTORS>
+
+  <MOVE_MAP_FACTORIES>
+    <xi:include href="PATH/movemap.xml" />      # Standard FFL MoveMap
+  </MOVE_MAP_FACTORIES>
+
+  <TASKOPERATIONS>
+    <xi:include href="PATH/taskoperators.xml" /># Standard FFL TaskOperators
+<OperateOnResidueSubset name="core_resfile2" selector="core" >
+    <RestrictAbsentCanonicalAASRLT aas="AFILMVW" />
+</OperateOnResidueSubset>
+     <OperateOnResidueSubset name="restrict_epitope1" selector="epitope1" >
+     <PreventRepackingRLT />
+     </OperateOnResidueSubset>
+     <OperateOnResidueSubset name="restrict_epitope2" selector="epitope2" >
+     <PreventRepackingRLT />
+     </OperateOnResidueSubset>
+    <ExtraRotamersGeneric name="ex1ex2" ex1="1" ex2="1" />
+        <LayerDesign name="layer_gen" layer="hydrophobes" use_sidechain_neighbors="0" repack_non_design="0" pore_radius="2.0" make_pymol_script="0" core_E="20" surface_E="40" core_H="20" surface_H="40" surface_L="40" core_L="10" >
+        <CombinedTasks name="hydrophobes" >
+        <all copy_layer="surface" />
+        <SelectBySASA mode="sc" state="monomer" probe_radius="1.5" core_asa="20" surface_asa="40" surface="1" />
+        <OperateOnCertainResidues>
+        <NoResFilter>
+        <ResidueName3Is name3="TRP,PHE,MET" />
+        </NoResFilter>
+        <RestrictToRepackingRLT/>
+        </OperateOnCertainResidues>
+        </CombinedTasks>
+        </LayerDesign>    
+
+</TASKOPERATIONS>
+
+  <FILTERS>
+<RmsdFromResidueSelectorFilter name="epitopeRMSD" CA_only="1" reference_selector="insertion" query_selector="full_epitope" confidence="0" />
+    <RmsdFromResidueSelectorFilter name="final_RMSD" confidence="0"
+        reference_name="template_pose" reference_selector="chA_insert"
+        query_selector="TEMPLATE" />
+   <PackStat name="packstat" threshold="0.45" repeats="3" confidence ="0"/>
+    <ExposedHydrophobics name="exposed_hydrophobic" sasa_cutoff="20" />
+    <ResidueCount name="ala_count" residue_types="ALA" max_residue_count="4" confidence="0" />	
+    <ResidueCount name="met_count" residue_types="MET" max_residue_count="2" confidence="0" />
+    <ResidueCount name="aroma_count" residue_types="TRP,PHE,TYR" min_residue_count="2" confidence="0" />
+    <ResidueCount name="his_count" residue_types="HIS" max_residue_count="2" confidence="0" />	
+    <ResidueCount name="cys_count" residue_types="CYS" max_residue_count="4" confidence="1" />
+    <CavityVolume name="cav_vol" confidence="0" />
+    <BuriedUnsatHbonds name="BUNS"  jump_number="0" cutoff="10" confidence="0"/>
+
+  </FILTERS>
+
+  <MOVERS>
+    <SavePoseMover name="saveTemplate" restore_pose="0" reference_name="template_pose" />
+    <DeleteRegionMover name="removeExtraChains" residue_selector="!chA" />
+    <SavePoseMover name="load_target" reference_name="target_pose" pdb_file="RSVF.pdb" />
+    <StructFragmentMover name="FragmentPicker" prefix="frags"
+      vall_file="/work/upcorreia/databases/vall.2011.07/vall.jul19.2011.gz" output_frag_files="1"
+      small_frag_file="frags.200.3mers" large_frag_file="frags.200.9mers"/>
+    # Constraints have to be used to guide the ab initio folding.
+    <AddConstraints name="addCST" >
+      <AtomPairConstraintGenerator name="atompairCST" sd="1.0" ca_only="true"
+        use_harmonic="true" unweighted="true" min_seq_sep="6" max_distance="40" residue_selector="chA"/>
+	</AddConstraints>
+    # The NubInitio folding is done here.
+    <NubInitioMover name="FFL" fragments_id="frags" template_motif_selector="insertion" use_cst="true"
+      clear_motif_cst="true" rmsd_threshold="3" fullatom_scorefxn="fullatom" angle_weight="2.0" dihedral_weight="2" >
+      <Nub reference_name="target_pose" residue_selector="query_motif" >
+        <Segment order="1" n_term_flex="0" c_term_flex="0"  />
+	<Segment order="2" n_term_flex="0" c_term_flex="0"  />
+      </Nub>
+    </NubInitioMover>
+
+
+
+<FastDesign name="fdesign2" scorefxn="SFXN1" clear_designable_residues="false" ramp_down_constraints="false" repeats="2" task_operations="ex1ex2,core_resfile2,restrict_epitope1,restrict_epitope2" >
+    <MoveMap name="donotmovetheepitope">
+        <Span begin="76" end="92" chi="0" bb="0"/>
+        <Span begin="35" end="41" chi="0" bb="0"/>
+        <Jump number="1" setting="false" />
+     </MoveMap>
+   </FastDesign>
+<FastRelax name="frelax" />
+     <AddHelixSequenceConstraints name="helix_capping" residue_selector="TEMPLATE"
+        reset="false" min_helix_length="8"
+        add_n_terminal_constraints="true" min_n_terminal_charges="3" n_terminal_residues="6" n_terminal_constraint_strength="15.0"
+        add_c_terminal_constraints="true" min_c_terminal_charges="3" c_terminal_residues="6" c_terminal_constraint_strength="15.0"
+        add_overall_constraints="true" types_to_avoid="ASN ASP SER GLY THR VAL" overall_max_count="2" overall_constraints_strength="5.0"
+        add_alanine_constraints="true" desired_alanine_fraction="0.08" ala_constraint_under_strength="0.2" ala_constraint_over_strength="0.2"
+        add_hydrophobic_constraints="false" desired_min_hydrophobic_fraction="0.25" hydrophobic_constraint_strength="0.2" />
+     <NubInitioLoopClosureMover name="FFLCCD" fragments_id="frags" />
+ <ClearConstraintsMover name="cleanCST" />   
+
+ <DisplayPoseLabelsMover name="showDesign" />
+ 
+
+</MOVERS>
+
+  <APPLY_TO_POSE>
+  </APPLY_TO_POSE>
+
+  <PROTOCOLS>
+    # Preparing Template
+    <Add mover="saveTemplate" />
+    <Add mover="removeExtraChains" />
+    <Add mover="FragmentPicker" />
+    <Add mover="addCST" />
+    # Fold
+    <Add mover="FFL" />
+    <Add mover="cleanCST" />
+    # Design
+    <Add mover="addCST" />
+    <Add mover="showDesign" />
+    <Add mover="fdesign2" />
+    <Add mover="FFLCCD"/>
+ <Add filter_name="packstat" />
+    <Add filter_name="aroma_count" />
+    <Add filter_name="BUNS" />
+    <Add filter_name="ala_count" />
+    <Add filter_name="cav_vol" />
+<Add filter_name="final_RMSD" />
+    #Add mover_name="frelax" />
+    #Add filter_name="epitopeRMSD" />    
+  </PROTOCOLS>
+
+</ROSETTASCRIPTS>

@@ -1,0 +1,18 @@
+<ResiduePDBInfoHasLabel name="MOTIF"    property="MOTIF" />
+<ResiduePDBInfoHasLabel name="TEMPLATE" property="TEMPLATE" />
+<ResiduePDBInfoHasLabel name="CONTEXT"  property="CONTEXT" />
+<ResiduePDBInfoHasLabel name="FLEXIBLE" property="FLEXIBLE" />
+<ResiduePDBInfoHasLabel name="HOTSPOT"  property="HOTSPOT" />
+<ResiduePDBInfoHasLabel name="COLDSPOT" property="COLDSPOT" />
+
+<And name="FLEXIBLE_AND_MOTIF" selectors="FLEXIBLE,MOTIF" />
+<And name="COLDSPOT_AND_MOTIF" selectors="COLDSPOT,MOTIF" />
+<And name="HOTSPOT_AND_MOTIF"  selectors="HOTSPOT,MOTIF" />
+
+<Or name="COLDSPOT_OR_TEMPLATE"             selectors="COLDSPOT,TEMPLATE" />
+<Or name="FLEXIBLE_OR_TEMPLATE"             selectors="FLEXIBLE,TEMPLATE" />
+<Or name="COLDSPOT_OR_FLEXIBLE_OR_TEMPLATE" selectors="COLDSPOT,FLEXIBLE,TEMPLATE" />
+<Or name="HOTSPOT_OR_CONTEXT"               selectors="HOTSPOT,CONTEXT" />
+
+<ProteinResidueSelector name="PROTEIN" />
+<Not name="!PROTEIN" selector="PROTEIN" />

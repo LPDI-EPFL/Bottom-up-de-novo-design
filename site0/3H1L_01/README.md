@@ -14,6 +14,15 @@ In the following animation, the segments that were remodeled are colored red, th
 
 ![](3H1L_01_loops.gif)
 
+Following remodeling, we selected one decoy as design template for a second round of folding and desing using Rosetta FunFolDes with the provided [input_files](./input_files_FunFolDes). 
+
+The FunFolDes [script](./input_files_FunFolDes/3H1L_01.rd2_folding.xml) can be executed with: 
+
+```
+/work/upcorreia/bin/rosetta_bin/stable/RosettaWeekly/rosetta_scripts.linuxiccrelease -s 3H1L_01.rd2_folding.template.pdb  -parser:protocol 3H1L_01.rd2_folding.xml
+```
+
+We generated ~20,000 decoys, which were subsequently ranked according to overall Rosetta energy, backbone geometry and core packing for subsequent experimental testing. 
 
 
 
