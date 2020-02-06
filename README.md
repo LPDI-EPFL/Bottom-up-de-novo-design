@@ -17,7 +17,7 @@ In general, the computational design process involved three steps:
 2) FunFolDes to fold and design the topologies. For detailed information about the method, please refer to the [FunFolDes repository](https://github.com/LPDI-EPFL/FunFolDesData), the official [Rosetta documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/fold_from_loops/FunFolDes) or the [FunFolDes manuscript](https://doi.org/10.1371/journal.pcbi.1006623). 
 3) [Rosetta Remodel](https://www.rosettacommons.org/docs/latest/application_documentation/design/Remodel) to optimize connecting loops if necessary.
 
-The subfolders in this repository contain the necessary input files to define the topologies using TopoBuilder, as well as for the folding/design using FunFolDes. 
+The subfolders in this repository contain the necessary input files to define the topologies using TopoBuilder, as well as for the folding/design using FunFolDes. For analysing the computational designs as well as the experimental data, we used the [rstoolbox python library]((https://doi.org/10.1186/s12859-019-2796-3). 
 
 
 ## Software prerequisites
