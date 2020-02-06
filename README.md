@@ -4,14 +4,20 @@
 - [Software prerequisites](#software_prerequisites)
    
 ## Description
-This repository contains additional data presented in the manuscript ["A bottom-up approach for *de novo* design of functional proteins"](link). For each *de novo* designed protein topology presented, this repository provides the input files used for the computational design procedure, as well as score files and models of the designed proteins. 
+This repository contains additional data presented in the manuscript ["A bottom-up approach for *de novo* design of functional proteins"](link). For each topology designed using [TopoBuilder](link), this repository provides the input files used for the computational design procedure, as well as score files and models of the designed proteins. 
 The repository is organized by the functional motifs that were stabilized, which are epitopes targeted by RSV neutralizing antibodies. 
 
 ![](./motifs.png)
 
 [site IV](./siteIV)                                        [site 0](./site0)                    [double motif](./double_motif)
 
-json-format files to organize the secondary structural composition, functional motif and spatial arrangement of each designed topology in a defined layer. And using the python-based algorithm TopoBuilder, it builds the ideal secondary structural elements (SSEs) with embeded motif in a 3D space. Based on the distance between the edge of each SSEs, the length of loop connection was automatically determined 
+
+In general, the computational design process involved three steps: 
+1) Topology building using TopoBuilder. For detailed instructions how to install TopoBuilder and general information about the method please see the official [TopoBuilder documentation](https://github.com/LPDI-EPFL/topobuilder/tree/releasepy2). 
+2) FunFolDes to fold and design the topologies. For detailed information about the method, please refer to the [FunFolDes repository](https://github.com/LPDI-EPFL/FunFolDesData), the official [Rosetta documentation](https://www.rosettacommons.org/docs/latest/scripting_documentation/RosettaScripts/composite_protocols/fold_from_loops/FunFolDes) or the [FunFolDes manuscript](https://doi.org/10.1371/journal.pcbi.1006623). 
+3) [Rosetta Remodel](https://www.rosettacommons.org/docs/latest/application_documentation/design/Remodel) to optimize connecting loops if necessary.
+
+The subfolders in this repository contain the necessary input files to define the topologies using TopoBuilder, as well as for the folding/design using FunFolDes. 
 
 
 ## Software prerequisites
