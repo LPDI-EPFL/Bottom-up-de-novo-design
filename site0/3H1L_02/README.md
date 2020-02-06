@@ -5,4 +5,4 @@ The topology was assembled using TopoBuilder using these [configuration/input fi
 For experimental testing, we designed a combinatorial library sampling a defined diversity in 12 critical core positions, as detailed [here](./B1H_A1H_B2E_A2H/output/). 
 The library was screened using yeast surface display followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
 
-The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models).
+The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models). All protein sequences and their computed enrichments under selection for binding to D25, 5C4, or D25+chymotrypsin / 5C4 + chymotrypsin can be found [here](./3H1L_02_sequences_enrichment.csv). 
