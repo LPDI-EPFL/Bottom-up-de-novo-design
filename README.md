@@ -9,9 +9,7 @@ The repository is organized by the functional motifs that were stabilized, which
 
 ![](./motifs.png)
 
-[site IV](./siteIV)
-[site 0](./site0)
-[double motif](./double_motif)
+[site IV](./siteIV)                    [site 0](./site0)                            [double motif](./double_motif)
 
 json-format files to organize the secondary structural composition, functional motif and spatial arrangement of each designed topology in a defined layer. And using the python-based algorithm TopoBuilder, it builds the ideal secondary structural elements (SSEs) with embeded motif in a 3D space. Based on the distance between the edge of each SSEs, the length of loop connection was automatically determined 
 
