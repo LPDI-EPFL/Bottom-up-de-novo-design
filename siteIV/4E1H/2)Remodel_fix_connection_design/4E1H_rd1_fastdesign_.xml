@@ -1,0 +1,83 @@
+<ROSETTASCRIPTS>
+
+  <SCOREFXNS>
+	<ScoreFunction name="testscoring" weights="talaris2014_lowala.wts">
+	</ScoreFunction>
+  </SCOREFXNS>
+
+  <RESIDUE_SELECTORS>
+    <Index name="epitope1" resnums="11A-16A" />
+    <Or name="full_epitope" selectors="epitope1" />
+    <Layer name="surface_residues" select_surface="true" surface_cutoff="2.0" />
+    <Layer name="core_residues" select_core="true" />
+    <Layer name="boundary_residues" select_boundary="true" />
+  </RESIDUE_SELECTORS>
+
+  <TASKOPERATIONS>
+     <InitializeFromCommandline name="init"/>
+     <ReadResfile name="rrf2" filename="Resfile"/>
+     <OperateOnResidueSubset name="surface" selector="surface_residues" >
+        <RestrictAbsentCanonicalAASRLT aas="DEGHKNPST" />
+     </OperateOnResidueSubset>
+     <OperateOnResidueSubset name="core_resfile" selector="core_residues" >
+        <RestrictToRepackingRLT/>
+     </OperateOnResidueSubset>
+      <OperateOnResidueSubset name="boundary_resfile" selector="boundary_residues" >
+      	<RestrictToRepackingRLT/>
+      </OperateOnResidueSubset>
+     <OperateOnResidueSubset name="restrict_epitope" selector="full_epitope" >
+        <PreventRepackingRLT />
+     </OperateOnResidueSubset>
+   </TASKOPERATIONS>
+
+  <FILTERS>
+    <ResidueCount name="gly_count" residue_types="GLY" max_residue_count="10" confidence="0" />
+    <CavityVolume name="cav_vol" confidence="0" />
+    <ScoreType name="rama" scorefxn="testscoring" score_type="rama" threshold="-6" confidence="0" />
+    <BuriedUnsatHbonds name="BUNS"  jump_number="0" cutoff="10" confidence="0" />
+    <Rmsd name="RMSD" threshold="1.2" superimpose="1" by_aln="false" />
+    <PackStat name="pack" threshold="0.65" confidence="0" />
+    <CombinedValue name="comb_filters" confidence="0" >
+            <Add filter_name="rama" factor="0.2" />
+            <Add filter_name="pack" factor="0.8" />
+    </CombinedValue>
+  </FILTERS>
+
+<MOVERS>
+    <Dssp name="DSSP" />
+    <AddConstraints name="add_csts" >
+    <SheetConstraintGenerator name="betaconstraint" secstruct="LEEEEEEEELEEEEEEEEELLLLHHHHHHHHHHHHHHHHLLLEEEEEEELLLLLEEEEEELLLL" spairs="1-2.A.1;1-3.A.1;3-4.A.1" angle_tolerance="0.5" weight="1.5" />
+    </AddConstraints>
+    <RemoveConstraints name="rm_csts" constraint_generators="betaconstraint" />
+    <PackRotamersMover name="design_prot1" scorefxn="testscoring" task_operations="init,rrf2,restrict_epitope" />
+    <FastDesign name="fdesign" scorefxn="testscoring" clear_designable_residues="false" ramp_down_constraints="true" repeats="2" task_operations="surface,restrict_epitope,boundary_resfile,core_resfile" />
+    <FastRelax name="frelax1" repeats="2" task_operations="restrict_epitope" />
+    <FastRelax name="frelax2" repeats="2" />
+    <ParsedProtocol name="design" >
+            <Add mover_name="frelax1" filter_name="comb_filters"/>
+            <Add mover_name="design_prot1" filter_name="rama"/>
+    </ParsedProtocol>
+    <LoopOver name="loopover" mover_name="design" iterations="2" />
+    <GenericMonteCarlo name="genericmc1" mover_name="design" filter_name="comb_filters" trials="5" sample_type="low" temperature="2" drift="1" />
+    <GenericMonteCarlo name="genericmc2" mover_name="frelax2" filter_name="RMSD" trials="5" sample_type="low" temperature="2" drift="1" />
+  </MOVERS>
+
+  <APPLY_TO_POSE>
+  </APPLY_TO_POSE>
+
+  <PROTOCOLS>
+    <Add mover_name="add_csts" />
+    <Add mover_name="genericmc1" />
+    <Add mover_name="genericmc2" />
+    <Add mover_name="rm_csts" />
+    <Add filter_name="gly_count" />
+    <Add filter_name="cav_vol" />
+    <Add filter_name="BUNS" />
+    <Add filter_name="pack" />
+    <Add filter_name="RMSD" />
+
+  </PROTOCOLS>
+
+  <OUTPUT />
+
+</ROSETTASCRIPTS>

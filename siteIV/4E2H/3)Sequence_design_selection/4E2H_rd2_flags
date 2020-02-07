@@ -1,0 +1,7 @@
+-s 101_4E2H_rd2_seq_design.pdb
+-parser:protocol 4E2H_layerdesign_protocol.xml
+-beta_nov15
+-ex1 
+-ex2aro
+-no_his_his_pairE 
+-nstruct 40

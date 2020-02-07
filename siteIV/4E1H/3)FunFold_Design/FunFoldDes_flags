@@ -1,0 +1,13 @@
+-parser:protocol FFL_design_singltSegment_nobinder.xml
+-s 4E1H_design_rd2.pdb
+#-out:prefix simple_run_
+#-out:file:silent simple_run_tutorial_silent
+-out:nstruct 100
+
+-overwrite
+-in:ignore_unrecognized_res
+-in:ignore_waters
+#-out:file:silent_struct_type binary
+
+-out:levels protocols.fold_from_loops:500 
+-out:mute protocols.abinitio

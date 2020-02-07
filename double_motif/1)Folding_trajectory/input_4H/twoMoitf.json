@@ -1,0 +1,42 @@
+{
+  "layers" : [
+    [
+      {
+        "type" : "H",
+        "ref" : "twoMoitf.Mota",
+        "shift_z" : 12,
+        "shift_x" : 3
+      }
+    ],
+    [
+      {
+        "type" : "H",
+        "ref" : "twoMoitf.2D10",
+        "shift_z" : -3,
+        "shift_x" : 20
+      }
+    ]
+  ],
+  "config" : {
+    "name" : "twoMoitf"
+  },
+  "motifs" : [
+    {
+      "id" : "twoMoitf",
+      "chain" : "A",
+      "pdbfile" : "two_motif.pdb",
+      "segments" : [
+        {
+          "ini" : 1,
+          "end" : 44,
+          "id" : "Mota"
+        },
+        {
+          "ini" : 50,
+          "end" : 84,
+          "id" : "2D10"
+        }
+      ]
+    }
+  ]
+}

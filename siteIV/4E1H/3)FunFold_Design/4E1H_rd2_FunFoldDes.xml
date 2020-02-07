@@ -1,0 +1,98 @@
+<ROSETTASCRIPTS>
+
+  <SCOREFXNS>
+     <ScoreFunction name="centroid" weights="cen_std" patch="score4L" />
+     <ScoreFunction name="fullatom" weights="talaris2014" />
+  </SCOREFXNS>
+
+  <RESIDUE_SELECTORS>
+    <xi:include href="./xml_pieces/selectors.xml" />
+    <Index name="insertion"  resnums="11A-16A" />
+    <Not   name="!insertion" selector="insertion" />
+    <Chain name="templateChain"  chains="A" />
+    <Not   name="!templateChain" selector="templateChain" />
+
+    <Index name="query_motif" resnums="2P-7P" />
+    <Chain name="designChain" chains="P" />
+    <Layer name="core_residues" select_core="true" />
+  </RESIDUE_SELECTORS>
+
+  <MOVE_MAP_FACTORIES>
+    <xi:include href="./xml_pieces/movemap.xml" />
+  </MOVE_MAP_FACTORIES>
+
+  <TASKOPERATIONS>
+    <xi:include href="./xml_pieces/taskoperators.xml" />
+    <OperateOnResidueSubset name="core_resfile" selector="core_residues" >
+        <RestrictAbsentCanonicalAASRLT aas="AFILMPVW" />
+    </OperateOnResidueSubset>
+  </TASKOPERATIONS>
+
+  <FILTERS>
+    <RmsdFromResidueSelectorFilter name="rmsd_drift" reference_name="refolded_pose"
+      reference_selector="designChain" query_selector="designChain" confidence="0" />
+    <RmsdFromResidueSelectorFilter name="final_rmsd" reference_name="template_pose"
+      reference_selector="templateChain" query_selector="designChain" confidence="0" /> 
+    <PackStat name="packstat" threshold="0.6" repeats="5"/>
+  </FILTERS>
+
+  <MOVERS>
+    <SavePoseMover name="saveTemplate" restore_pose="0" reference_name="template_pose" />
+    <SavePoseMover name="saveRefolded" restore_pose="0" reference_name="refolded_pose" />
+    <SavePoseMover name="loadTarget" reference_name="target_pose" pdb_file="101F_epitope.pdb" />
+    <DeleteRegionMover name="removeExtraChains" residue_selector="!templateChain" />
+    <StructFragmentMover name="FragmentPicker" prefix="frag" vall_file="database/vall.jul19.2011.gz"
+       output_frag_files="1" small_frag_file="frag_.200.3mers" large_frag_file="frag_.200.9mers" />
+    <AddConstraints name="addCST" >
+      <AtomPairConstraintGenerator name="atompairCST" sd="3.0" ca_only="true" min_seq_sep="6"
+        use_harmonic="true" unweighted="true" max_distance="40" residue_selector="templateChain" />
+      <SheetConstraintGenerator name="betaconstraint" secstruct="LEEEEEEEELEEEEEEEEELLLLHHHHHHHHHHHHHHHHLLLEEEEEEELLLLLEEEEEELLLL" spairs="1-2.A.1;1-3.A.1;3-4.A.1" angle_tolerance="0.5" weight="1.75" /> 
+    </AddConstraints>
+    <ClearConstraintsMover name="cleanCST" />
+    <RemoveConstraints name="RemoveCST" constraint_generators="betaconstraint" />
+    <NubInitioMover name="FFL" fragments_id="frag" template_motif_selector="insertion" fullatom_scorefxn="fullatom" dump_centroid="true" rmsd_threshold="3" repack_disulfides="1" use_cst="1" angle_weight="2" dihedral_weight="2" >
+      <Nub reference_name="target_pose" residue_selector="query_motif" >
+        <Segment order="1" n_term_flex="1" c_term_flex="1"  />
+      </Nub>
+    </NubInitioMover>
+    <DisplayPoseLabelsMover name="showDesign" movemap_factory="FFLSTANDARD_MOVEMAP"
+      task_operations="FFLMOTIF_TASKOP,FFLFLEX_TASKOP,FFLTEMPLATE_TASKOP" />
+
+    <FastDesign name="DesignRelax" scorefxn="fullatom" repeats="3"
+      task_operations="FFLMOTIF_TASKOP,FFLFLEX_TASKOP,FFLTEMPLATE_TASKOP,core_resfile"
+      delete_virtual_residues_after_FastRelax="true"
+      movemap_factory="FFLSTANDARD_MOVEMAP" >
+    </FastDesign>
+
+    # This might be helpful in order to latter on analyse the designs in PyMOL
+    <ResidueLabelsToPymolSelectionMover name="pymolselect" pdb_count="true" />
+  </MOVERS>
+
+  <APPLY_TO_POSE>
+  </APPLY_TO_POSE>
+
+  <PROTOCOLS>
+    # Preparing Template
+    <Add mover="removeExtraChains" />
+    <Add mover="saveTemplate" />
+    <Add mover="FragmentPicker" />
+    <Add mover="addCST" />
+    # Fold
+    <Add mover="FFL" />
+    <Add mover="saveRefolded" />
+    <Add mover="showDesign" />
+    # Design
+    <Add mover="cleanCST" />
+    <Add mover="RemoveCST" />
+    <Add mover="addCST" />
+    <Add mover="DesignRelax" />
+    <Add mover="RemoveCST" />
+    <Add mover="cleanCST" />
+    # Evaluate
+    <Add filter="rmsd_drift" />
+    <Add filter="final_rmsd" />
+    <Add mover="pymolselect" />
+    <Add filter="packstat" />
+  </PROTOCOLS>
+  <OUTPUT />
+</ROSETTASCRIPTS>

@@ -1,0 +1,7 @@
+-s 4E1H_FFD_rd3.pdb 
+-parser:protocol enumerate_protocol.xml
+-beta_nov15
+-ex1 
+-ex2aro
+-no_his_his_pairE 
+-nstruct 100

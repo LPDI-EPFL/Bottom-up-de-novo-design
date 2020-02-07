@@ -1,0 +1,23 @@
+# This is a .comp file for requiring that a structure be ten percent aromatic.
+# File created 21 July 2015 by Vikram K. Mulligan (vmullig@uw.edu), Baker laboratory.
+PENALTY_DEFINITION
+OR_PROPERTIES AROMATIC ALIPHATIC
+NOT_TYPE ALA
+FRACT_DELTA_START -0.05
+FRACT_DELTA_END 0.05
+PENALTIES 100 0 100 # The above two lines mean that if we're 5% below or 5% above the desired content, we get a 100-point penalty.
+FRACTION 0.7 # Forty percent aromatic or aliphatic, but not leucine
+BEFORE_FUNCTION CONSTANT
+AFTER_FUNCTION CONSTANT
+END_PENALTY_DEFINITION
+
+PENALTY_DEFINITION
+TYPE ALA
+DELTA_START -1
+DELTA_END 1
+PENALTIES 100 0 100
+FRACTION 0.05 # Five percent alanine
+BEFORE_FUNCTION CONSTANT
+AFTER_FUNCTION CONSTANT
+
+END_PENALTY_DEFINITION

@@ -1,0 +1,25 @@
+<ResiduePDBInfoHasLabel name="MOTIF"     property="MOTIF" />
+<Not                    name="!MOTIF"    selector="MOTIF" />
+<ResiduePDBInfoHasLabel name="TEMPLATE"  property="TEMPLATE" />
+<Not                    name="!TEMPLATE" selector="TEMPLATE" />
+<ResiduePDBInfoHasLabel name="CONTEXT"   property="CONTEXT" />
+<Not                    name="!CONTEXT"  selector="CONTEXT" />
+<ResiduePDBInfoHasLabel name="FLEXIBLE"  property="FLEXIBLE" />
+<Not                    name="!FLEXIBLE" selector="FLEXIBLE" />
+<ResiduePDBInfoHasLabel name="HOTSPOT"   property="HOTSPOT" />
+<Not                    name="!HOTSPOT"  selector="HOTSPOT" />
+<ResiduePDBInfoHasLabel name="COLDSPOT"  property="COLDSPOT" />
+<Not                    name="!COLDSPOT" selector="COLDSPOT" />
+
+<And name="FLEXIBLE_AND_MOTIF" selectors="FLEXIBLE,MOTIF" />
+<And name="COLDSPOT_AND_MOTIF" selectors="COLDSPOT,MOTIF" />
+<And name="HOTSPOT_AND_MOTIF"  selectors="HOTSPOT,MOTIF" />
+
+<Or name="COLDSPOT_OR_TEMPLATE"              selectors="COLDSPOT,TEMPLATE" />
+<Or name="FLEXIBLE_OR_TEMPLATE"              selectors="FLEXIBLE,TEMPLATE" />
+<Or name="COLDSPOT_OR_FLEXIBLE_OR_TEMPLATE"  selectors="COLDSPOT,FLEXIBLE,TEMPLATE" />
+<Or name="HOTSPOT_OR_CONTEXT"                selectors="HOTSPOT,CONTEXT" />
+<And name="HOTSPOT_OR_CONTEXT_AND_!FLEXIBLE" selectors="HOTSPOT_OR_CONTEXT,!FLEXIBLE" />
+
+<ProteinResidueSelector name="PROTEIN" />
+<Not name="!PROTEIN" selector="PROTEIN" />

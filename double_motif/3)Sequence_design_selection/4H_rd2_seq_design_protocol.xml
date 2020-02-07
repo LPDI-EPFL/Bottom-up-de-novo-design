@@ -1,0 +1,236 @@
+<ROSETTASCRIPTS>
+<SCOREFXNS>
+  <ScoreFunction name="sfxn_std" weights="beta" >
+    <Reweight scoretype="aa_composition" weight="1.0" />
+    <Reweight scoretype="p_aa_pp" weight="0.8" />
+    <Reweight scoretype="atom_pair_constraint" weight="2.0" />
+    <Reweight scoretype="rama" weight="0.35" />
+  </ScoreFunction>
+  <ScoreFunction name="TotalHydrophobic" weights="total_hydrophobic_weights.wts" />
+  <ScoreFunction name="sfxn_cen" weights="fldsgn_cen" >
+    <Reweight scoretype="hbond_sr_bb" weight="1.0" />
+    <Reweight scoretype="hbond_lr_bb" weight="1.0" />
+    <Reweight scoretype="atom_pair_constraint" weight="1.0" />
+    <Reweight scoretype="angle_constraint" weight="1.0" />
+    <Reweight scoretype="dihedral_constraint" weight="1.0" />
+  </ScoreFunction>
+</SCOREFXNS>
+<RESIDUE_SELECTORS>
+    <Layer name="core_residues" select_core="true" ball_radius="2.0" core_cutoff="3.2" use_sidechain_neighbors="true" />
+    <Layer name="boundary_residues" select_boundary="true" />
+    <Layer name="surface_residues" select_surface="true" />
+    <SecondaryStructure name="Helix" pose_secstruct="LHHHHHHHHHHHHHHHHHHHHLLLLHHHHHHHHHHHHHHHHHHHHLLLHHHHHHHHHHHHHHHHLLLHHHHHHLLHHHHHHHHL" ss="H" />
+    <And name="helix_surface" selectors="Helix,surface_residues" />
+    <And name="helix_core" selectors="Helix,core_residues" />
+    <Index name="epitope1" resnums="9A,10A,13A,14A,16A,17A,18A,20A,21A,23A,25A,26A,27A,29A,30A,33A,34A,37A,38A,44A" />
+    <Index name="epitope2" resnums="65A,66A,68A,71A,72A,76A" />
+    <Chain name="chA" chains="A" />
+    <Or name="epitopes" selectors="epitope1,epitope2"/>
+    <Index name="helix1" resnums="2A-21A"/>
+    <Index name="helix2" resnums="26A-46A"/>
+    <Index name="helix3" resnums="49A-64A"/>
+    <Index name="helix4" resnums="68A-73A"/>
+    <Index name="helix5" resnums="76A-83A"/>
+    <And name="helix1_core" selectors="helix1,core_residues" />
+    <And name="helix2_core" selectors="helix2,core_residues" />
+    <And name="helix3_core" selectors="helix3,core_residues" />
+    <And name="helix4_core" selectors="helix4,core_residues" />
+    <And name="helix5_core" selectors="helix5,core_residues" />
+    <Not name="dis1" selector="helix1_core" />
+    <Not name="dis2" selector="helix2_core" />
+    <Not name="dis3" selector="helix3_core" />
+    <Not name="dis4" selector="helix4_core" />
+    <Not name="dis5" selector="helix5_core" />
+    <ResidueName name="cys_select" residue_names="CYD" />
+    <And name="cys_surface" selectors="cys_select,surface_residues" />
+    <SecondaryStructure name="Loop" ss="L" use_dssp="true" />
+    <And name="loop_core" selectors="Loop,core_residues" />
+    <Not name="!chA" selector="chA" />
+</RESIDUE_SELECTORS>
+
+<TASKOPERATIONS>
+        <LimitAromaChi2 name="limitchi2" include_trp="1" />
+        <InitializeFromCommandline name="init"/>
+        <ReadResfile name="rrf2" filename="Resfile"/>
+        <OperateOnResidueSubset name="core_resfile" selector="core_residues" >
+        <RestrictAbsentCanonicalAASRLT aas="AFILMPVW" />
+        </OperateOnResidueSubset>
+    	  <OperateOnResidueSubset name="H_core_resfile" selector="helix_core" >
+            <RestrictAbsentCanonicalAASRLT aas="FILPVWY" />
+        </OperateOnResidueSubset>
+	      <OperateOnResidueSubset name="L_core_resfile" selector="loop_core" >
+            <RestrictAbsentCanonicalAASRLT aas="AFGILMPVW" />
+        </OperateOnResidueSubset>
+        <OperateOnResidueSubset name="boundary_resfile" selector="boundary_residues" >
+            <RestrictAbsentCanonicalAASRLT aas="ADEFGIKLNPQRSTVWY" />
+        </OperateOnResidueSubset>
+        <OperateOnResidueSubset name="H_surface_resfile" selector="helix_surface" >
+            <RestrictAbsentCanonicalAASRLT aas="DEGHKSNPQR" />
+        </OperateOnResidueSubset>
+        <OperateOnResidueSubset name="restrict_epitope" selector="epitopes" >
+            <PreventRepackingRLT/>
+        </OperateOnResidueSubset>
+
+</TASKOPERATIONS>
+
+<FILTERS>
+    <AverageDegree name="degree_core" task_operations="core_resfile" confidence="0" threshold="9.4" />
+    <AverageDegree name="degree" confidence="0" threshold="9.5" />
+    <ResidueCount name="ala_count_helix" residue_types="ALA" min_residue_count="0" max_residue_count="3" confidence="0" residue_selector="helix_core" />
+    <ResidueCount name="ala_count" residue_types="ALA" min_residue_count="0" max_residue_count="5" confidence="0" />
+    <ResidueCount name="cys_count" residue_types="CYS" min_residue_count="0" max_residue_count="6" confidence="0" />
+    <ResidueCount name="cys_count_dis" residue_types="CYS" min_residue_count="0" max_residue_count="6" confidence="1" />
+    <ResidueCount name="aromatic_count" residue_types="PHE,TRP,TYR" min_residue_count="2" max_residue_count="20" confidence="0" />
+    <ResidueCount name="res_count_all" confidence="0" />
+    <ResidueCount name="res_count_core" task_operations="core_resfile" confidence="0" />
+    <TotalSasa name="total_sasa" threshold="1" upper_threshold="10000" report_per_residue_sasa="False" confidence="0" />
+    <CalculatorFilter name="mean_sasa" equation="Totalsasa / (rescount2 + 0.01)" threshold="-0.30" confidence="0" >
+        <Var name="Totalsasa" filter="total_sasa" />
+        <Var name="rescount2" filter="res_count_all" />
+    </CalculatorFilter>
+    <ScoreType name="hbond_sfn" scorefxn="sfxn_std" score_type="hbond_lr_bb" threshold="0"/>
+    <CalculatorFilter name="bb" equation="hbond / rescount" threshold="-0.30" confidence="0">
+        <Var name="hbond" filter="hbond_sfn"/>
+        <Var name="rescount" filter="res_count_all"/>
+    </CalculatorFilter>
+    <AtomicContactCount name="contact_all" confidence="0" />
+    <AtomicContactCount name="contact_core" task_operations="core_resfile" confidence="0" />
+    <DisulfideEntropy name="entropy" lower_bound="0" tightness="10" confidence="0"/>
+    <ResidueCount name="remodel_dis" residue_types="CYS" max_residue_count="0" confidence="1" residue_selector="cys_surface" />
+    <TotalSasa name="exposed_hydrophobics" confidence="0" hydrophobic="True" upper_threshold="1800" />
+    <TotalSasa name="exposed_total" confidence="0"/>
+    <TotalSasa name="exposed_polars" confidence="0" polar="True" />
+    <CalculatorFilter name="exposed_is_np" equation="exposed / total" threshold="1" confidence="0" >
+        <Var name="total" filter="exposed_total"/>
+        <Var name="exposed" filter="exposed_hydrophobics"/>
+    </CalculatorFilter>
+    <ScoreType name="total_hydrophobic" scorefxn="TotalHydrophobic" threshold="0" />
+    <CalculatorFilter name="buried_np" equation="total - exposed" threshold="1" confidence="0" >
+        <Var name="total" filter="total_hydrophobic"/>
+        <Var name="exposed" filter="exposed_hydrophobics"/>
+    </CalculatorFilter>
+    <CalculatorFilter name="buried_over_exposed" equation="buried / (exposed+0.01)" threshold="1" confidence="0" >
+        <Var name="buried" filter="buried_np"/>
+        <Var name="exposed" filter="exposed_hydrophobics"/>
+    </CalculatorFilter>
+    <CalculatorFilter name="buried_minus_exposed" equation="buried - exposed" threshold="1" confidence="0" >
+        <Var name="buried" filter="buried_np"/>
+        <Var name="exposed" filter="exposed_hydrophobics"/>
+    </CalculatorFilter>
+    <CalculatorFilter name="percent_core" equation="rescount_core / (rescount3 + 0.01)" threshold="-0.35" confidence="0" >
+        <Var name="rescount3" filter="res_count_all"/>
+        <Var name="rescount_core" filter="res_count_core"/>
+    </CalculatorFilter>
+    <CavityVolume name="cavity_volume" confidence="0" />
+    <PackStat name="pack" confidence="0" threshold="0.65" />
+    <Holes name="holes" confidence="0" />
+    <BuriedUnsatHbonds name="unsat_hbond" confidence="0" jump_number="0" />
+    <CalculatorFilter name="cavity_threshold" equation="cav" threshold="60" confidence="1" >
+        <Var name="cav" filter="cavity_volume"/>
+    </CalculatorFilter>
+    <CalculatorFilter name="pack_threshold" equation="1-p" threshold="0.4" confidence="1" >
+        <Var name="p" filter="pack"/>
+    </CalculatorFilter>
+    <SSPrediction name="match_probability" cmd="PATH_TO_PSIPRED/psipred-4/runpsipred_single" use_probability="0" mismatch_probability="0" use_svm="0" threshold="0.90" confidence="1" />
+    <SecondaryStructureHasResidue name="core_number" secstruct_fraction_threshold="1.0" res_check_task_operations="core_resfile" required_restypes="VILMFYW" nres_required_per_secstruct="1" filter_helix="1" filter_sheet="1" filter_loop="0" min_helix_length="4" min_sheet_length="3" min_loop_length="1" confidence="0" />
+    <Rmsd name="RMSD" threshold="2" confidence="0" />
+    <ScoreType name="RAMA" scorefxn="sfxn_std" score_type="rama" threshold="0" confidence="0" />
+    <Geometry name="Loop_geometry" omega="165" residue_selector="Loop" count_bad_residues="false" />
+    <EnergyPerResidue name="rama_per_res_filter" scorefxn="sfxn_std" score_type="rama" bb_bb="0" whole_protein="1" energy_cutoff="0.1" />
+    <ScoreType name="Tscore" scorefxn="sfxn_std" score_type="total_score" threshold="0" confidence="0" />
+    <CalculatorFilter name="score_res" equation="SCORE/NRES" threshold="-2" confidence="0" >
+        <Var name="SCORE" filter_name="Tscore" />
+        <Var name="NRES" filter_name="res_count_all" />
+    </CalculatorFilter>
+</FILTERS>
+
+<MOVERS>
+    <Dssp name="DSSP" />
+    <AddCompositionConstraintMover name="addcomp1" filename="aa_composition.comp" selector="core_residues" />
+    <Disulfidize name="add_disulfides_1" match_rt_limit="6.0" set1="dis1" set2="helix1_core" score_or_matchrt="false" max_disulf_score="1.5" min_loop="8" use_l_cys="true" min_disulfides="1" max_disulfides="2" keep_current_disulfides="true" include_current_disulfides="true" use_d_cys="false" use_beta_cys="false"  mutate_gly="true" mutate_pro="true" />
+    <Disulfidize name="add_disulfides_2" match_rt_limit="6.0" set1="dis2" set2="helix2_core" score_or_matchrt="false" max_disulf_score="1.5" min_loop="8" use_l_cys="true" min_disulfides="1" max_disulfides="2" keep_current_disulfides="true" include_current_disulfides="true" use_d_cys="false" use_beta_cys="false"  mutate_gly="true" mutate_pro="true" />
+    <Disulfidize name="add_disulfides_3" match_rt_limit="6.0" set1="dis3" set2="helix3_core" score_or_matchrt="false" max_disulf_score="1.5" min_loop="8" use_l_cys="true" min_disulfides="1" max_disulfides="2" keep_current_disulfides="true" include_current_disulfides="true" use_d_cys="false" use_beta_cys="false"  mutate_gly="true" mutate_pro="true" />
+    <Disulfidize name="add_disulfides_4" match_rt_limit="6.0" set1="dis4" set2="helix4_core" score_or_matchrt="false" max_disulf_score="1.5" min_loop="8" use_l_cys="true" min_disulfides="1" max_disulfides="2" keep_current_disulfides="true" include_current_disulfides="true" use_d_cys="false" use_beta_cys="false"  mutate_gly="true" mutate_pro="true" />
+    <Disulfidize name="add_disulfides_5" match_rt_limit="6.0" set1="dis5" set2="helix5_core" score_or_matchrt="false" max_disulf_score="1.5" min_loop="8" use_l_cys="true" min_disulfides="1" max_disulfides="2" keep_current_disulfides="true" include_current_disulfides="true" use_d_cys="false" use_beta_cys="false"  mutate_gly="true" mutate_pro="true" />
+    <RemodelMover name="disulfide_remodel" build_disulf="true" match_rt_limit="6.0" quick_and_dirty="true" bypass_fragments="false" min_disulfides="1" max_disulfides="2" min_loop="6" keep_current_disulfides="true" include_current_disulfides="true"/>
+    <TaskAwareMinMover name="mini" scorefxn="sfxn_std" bb="1" chi="1" task_operations="restrict_epitope" />
+    <ParsedProtocol name="disulfide_remodel_filter" mode="sequence" >
+      <Add mover_name="disulfide_remodel" />
+      <Add mover_name="mini" />
+      <Add filter_name="remodel_dis" />
+      <Add filter_name="entropy" />
+    </ParsedProtocol>
+
+    <ParsedProtocol name="Disulfide_search" mode="random_order" >
+      <Add mover_name="add_disulfides_1" />
+      <Add mover_name="add_disulfides_2" />
+      <Add mover_name="add_disulfides_3" />
+      <Add mover_name="add_disulfides_5" />
+      <Add mover_name="mini" />
+    </ParsedProtocol>
+    <RandomMover name="disulfide_random" movers="add_disulfides_1,add_disulfides_2,add_disulfides_3,add_disulfides_4,add_disulfides_5,mini" weights="0.16,0.16,0.16,0.16,0.16,0.2" repeats="1"/>
+    <LoopOver name="disulfide_loopover" mover_name="Disulfide_search" filter_name="cys_count_dis" iterations="1" drift="false" ms_whenfail="MS_SUCCESS" />
+    <LoopOver name="disulfide_random_loopover" mover_name="disulfide_random" filter_name="cys_count_dis" iterations="1" drift="false" ms_whenfail="MS_SUCCESS" />
+    <FastDesign name="fastdesign" scorefxn="sfxn_std" clear_designable_residues="false" ramp_down_constraints="true" repeats="2" task_operations="H_surface_resfile,restrict_epitope,boundary_resfile,L_core_resfile,H_core_resfile,limitchi2" />
+    <ParsedProtocol name="fdesign" >
+          <Add mover_name="fastdesign" />
+          <Add filter_name="aromatic_count" />
+	  <Add filter_name="ala_count_helix" />
+	  <Add filter_name="match_probability" />
+    </ParsedProtocol>
+    <PackRotamersMover name="design_prot1" scorefxn="sfxn_std" task_operations="init,rrf2,limitchi2" />
+    <FastRelax name="frelax1" repeats="2" task_operations="restrict_epitope" />
+    <FastRelax name="frelax2" repeats="2" />
+    <ParsedProtocol name="design" >
+          <Add mover_name="frelax1" />
+          <Add mover_name="design_prot1" filter_name="RAMA" />
+    </ParsedProtocol>
+    <LoopOver name="loopover" mover_name="design" iterations="3" />
+    <GenericMonteCarlo name="genericmc1" mover_name="fdesign" filter_name="pack_threshold" trials="3" sample_type="low" temperature="2" drift="1" />
+    <GenericMonteCarlo name="genericmc2" mover_name="design" filter_name="pack" trials="3" sample_type="low" temperature="2" drift="1" />
+    <GenericMonteCarlo name="genericmc3" mover_name="frelax2" filter_name="RMSD" trials="3" sample_type="low" temperature="2" drift="1" />
+
+
+   <ParsedProtocol name="Disulide_design" >
+          <Add mover_name="mini" />
+          <Add mover_name="disulfide_random_loopover" />
+          <Add mover_name="mini" />
+          <Add mover_name="genericmc1" />
+          <Add mover_name="genericmc2" />
+          <Add mover_name="genericmc3" />
+    </ParsedProtocol>
+
+   <ParsedProtocol name="all_filters" >
+          <Add mover_name="DSSP" />
+	  <Add filter_name="ala_count" />
+          <Add filter_name="cys_count" />
+          <Add filter_name="aromatic_count" />
+          <Add filter_name="mean_sasa" />
+          <Add filter_name="percent_core" />
+          <Add filter_name="contact_core" />
+          <Add filter_name="bb" />
+          <Add filter_name="degree_core" />
+          <Add filter_name="exposed_is_np" />
+          <Add filter_name="percent_core" />
+          <Add filter_name="exposed_is_np" />
+          <Add filter_name="percent_core" />
+          <Add filter_name="cavity_threshold" />
+          <Add filter_name="pack_threshold" />
+          <Add filter_name="unsat_hbond" />
+          <Add filter_name="core_number" />
+	        <Add filter_name="RAMA" />
+          <Add filter_name="RMSD" />
+          <Add filter_name="match_probability" />
+          <Add filter_name="score_res" />
+          <Add filter_name="entropy" />
+	  <Add filter_name="buried_over_exposed" />
+    </ParsedProtocol>
+
+
+</MOVERS>
+
+<PROTOCOLS>
+        <Add mover_name="Disulide_design" />
+	      <Add mover_name="all_filters" />
+</PROTOCOLS>
+</ROSETTASCRIPTS>

@@ -1,0 +1,7 @@
+-s 3E2H_rd2_sequence_design.pdb
+-parser:protocol enumerate_protocol_val.xml
+-beta
+-ex1 
+-ex2aro
+-no_his_his_pairE 
+-nstruct 80

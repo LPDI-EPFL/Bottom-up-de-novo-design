@@ -1,0 +1,7 @@
+-s 4H_seq_design_rd2.pdb
+-parser:protocol 4H_rd2_seq_design_protocol.xml
+-beta_nov15
+-ex1 
+-ex2aro
+-no_his_his_pairE 
+-nstruct 60
