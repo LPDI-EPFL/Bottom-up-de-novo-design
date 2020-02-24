@@ -24,36 +24,37 @@ PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @4E2H_rd2_flags 
 ``` 
 The decoys generated from the sequence design were [provided](./3\)Sequence_design_selection/4E2H_rd2.minisilent). 
 
-Based on an ensemble of the 100 best decoys according to total energy, we selected 13 core positions and 6 surface positions close to the binding interface to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S5). 
+Based on an ensemble of the 100 best decoys according to total energy, we selected 12 core positions and 8 surface positions close to the binding interface to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S5). 
 
-### 4E2H library design and testing 
-For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 19 critical positions, as detailed below.
+### 4H library design and testing 
+For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 20 critical positions, as detailed below.
 
 | Position| AA to sample|
 | :------:|:-----------:|
-| 2       | NY          |
-| 4       | FI          |
-| 14      | LV          |
-| 15      | AE          | 
-| 18      | FLV         | 
-| 21      | HQ          | 
-| 25      | LW          | 
-| 26      | AV          |
-| 34      | IV          |
-| 38      | AV          | 
-| 58      | DV          |
-| 59      | FL          |
-| 62      | FL          |
-| 63      | AE          |
-| 65      | AG          |
-| 66      | LV          |
-| 76      | IV          |
-| 78      | IV          |
-| 80      | IL          |
+| 5       | EV          |
+| 6       | LV          |
+| 9       | RW          |
+| 10      | LV          | 
+| 13      | LV          | 
+| 16      | KQ          | 
+| 17      | IV          | 
+| 30      | IV          |
+| 33      | LQ          |
+| 37      | LV          | 
+| 40      | LQ          |
+| 41      | LV          |
+| 42      | RW          |
+| 50      | FLV         |
+| 51      | HQ          |
+| 54      | LV          |
+| 57      | EKQ         |
+| 58      | LV          |
+| 75      | LV          |
+| 78      | LV          |
 
-The following animation shows the [best scoring decoy](./4E2H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
+The following animation shows the [best scoring decoy](./4H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
 
-![](./4E2H.gif)
+![](./4H.gif)
 
 The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here](./4\)NGS_seq/4b2a_NGS.csv). The computational models of the sequences with the strongest enrichments can be found [here](). Followed with next-generation sequencing, we then choose around 4 sequences showing the strongest enrichments for recombinant expression and biophysical characterization.
 
