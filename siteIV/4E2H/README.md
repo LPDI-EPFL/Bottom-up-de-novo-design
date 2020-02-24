@@ -5,58 +5,49 @@ As mentioned in the description of [3E2H](../3E2H/README.md), the motif was extr
 ### 4E2H folding and design 
 Using the provided [input files](./1\)Folding_trajectory/input_4E2H/), the 4E2H topology was built and folded using Rosetta FunFolDes, generating approximately around [10000 decoys](./1\)Folding_trajectory/4E2H_folding_pose.csv). The top 300 decoys were selected according to several scoring metrics: overall energy, core packing and match of composition of secondary structures, and the best scoring decoys were inspected manually. 
 
-Following manual inspection, we increased the length of a connecting loop linking between supporting strand and motif, and remodeled several connecting loops to reform the end of  
-
-which is between residues 8-12, and also extending 3 residues at the C-terminus with the provided [blueprint](./2\)Remodel_fix_connection/4E2H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel, use: 
+Following manual inspection, we increased the length of one residue in a connecting loop linking in between supporting strand and motif spanning from residue 40-42, and remodeled several connecting loops to enforce the formation of secondary structures at the terminus of loop structure. The exact residues need to adapt the loop remodeling are listed in [blueprint](./2\)Remodel_fix_connection/4E2H_rd1_blueprint). For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel algorithm, use: 
 
 ```
 PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 4E2H_folding_rd1.pdb -remodel:blueprint 4E2H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
 ```  
 
-The shortened template subsequently served as template for the first round of sequence design using the [provided script](./2\)Remodel_fix_connection_design/4E1H_rd1_fastdesign_.xml) with a defined [Resfile](./2\)Remodel_fix_connection_design/Resfile) to specify the positions to be sampled. The Design script can be executed by the following command line:  
+The remodeled template subsequently served as template for the constrianed sequence design using the [provided script](./3\)Sequence_design_selection/4E2H_layerdesign_protocol.xml) with a defined [Resfile](./3\)Sequence_design_selection/4E2H_rd2_Resfile) to specify the positions to be sampled. The Design script can be executed by the following command line:  
 
 ```
-PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease -s 4E1H_folding_rd1_design.pdb -parser:protocol 4E1H_rd1_fastdesign_.xml
+PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @4E2H_rd2_flags -s 4E2H_rd2_seq_design.pdb -parser:protocol 4E2H_layerdesign_protocol.xml
 ``` 
-The decoys generated from the first round of sequence design were [provided](./2\)Remodel_fix_connection_design/4E1H_rd1_seqDesign_score.sc). 
+The decoys generated from the sequence design were [provided](./3\)Sequence_design_selection/4E2H_rd2.minisilent). 
 
-The decoys generated from the first round of design step still remain several structural flaws can be improved (i.e. the missing hydrogen bond pairing at the b sheet). Thus, we used FunFolDes to refine/refold the 4E1H topology for adjusting the topological arrangement. All the input files needed for running FunFolDes are provided [here](./3\)FunFold_Design). The FunFolDes script can be easily executed by:  
+Based on an ensemble of the 100 best decoys according to total energy, we selected 13 core positions and 6 surface positions close to the binding interface to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S5). 
 
-```
-PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @FunFoldDes_flags -s 4E1H_design_rd2.pdb  -parser:protocol 4E1H_rd2_FunFoldDes.xml
-```
-
-The sequences generated from FunFoldDes are provided [here](./3\)FunFold_Design/4E1H_rd2_FunFoldDes_decoys.csv). After FunFoldDes, an additional constrained sequence design was performed to introduce the disulfide bridge and sample the allowed surface positions close to the potential binding interface. We then chose the best decoy based on the total Rosetta energy to run this final design step. All the input files needed for running design script are provided [here](./4\)Final_sequence_design). The command line used to execute the design step is following: 
-
-```
-PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @flags -s 4E1H_FFD_rd3.pdb  -parser:protocol 4E1H_rd3_sequence_des.xml
-```
-
-Based on an ensemble of the [100 best decoys](./4\)Final_sequence_design/4E1H_rd3_design_decoy.csv) according to total energy, we selected 14 core positions to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S4). 
-
-### 4E1H library design and testing 
-For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 14 critical positions, as detailed below.
+### 4E2H library design and testing 
+For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 19 critical positions, as detailed below.
 
 | Position| AA to sample|
 | :------:|:-----------:|
-| 3       | FIL         |
-| 7       | IV          |
-| 19      | FINY        |
-| 27      | ALPV        | 
-| 30      | FHLY        | 
-| 31      | AV          | 
-| 34      | FHLY        | 
-| 35      | AV          |
-| 38      | ALPV        |
-| 46      | IV          | 
-| 56      | VF          |
-| 58      | CFY         |
-| 60      | DFVY        |
-| 62      | AV          |
+| 2       | NY          |
+| 4       | FI          |
+| 14      | LV          |
+| 15      | AE          | 
+| 18      | FLV         | 
+| 21      | HQ          | 
+| 25      | LW          | 
+| 26      | AV          |
+| 34      | IV          |
+| 38      | AV          | 
+| 58      | DV          |
+| 59      | FL          |
+| 62      | FL          |
+| 63      | AE          |
+| 65      | AG          |
+| 66      | LV          |
+| 76      | IV          |
+| 78      | IV          |
+| 80      | IL          |
 
-The following animation shows the [best scoring decoy](./4E1H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
+The following animation shows the [best scoring decoy](./4E2H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
 
-![](./4E1H.gif)
+![](./4E2H.gif)
 
 The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here](./5\)NGS_seq/4E1H_NGS.csv). The computational models of the sequences with the strongest enrichments can be found [here](). Followed with next-generation sequencing, we then choose around 8 sequences showing the strongest enrichments for recombinant expression and biophysical characterization.
 
