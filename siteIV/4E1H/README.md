@@ -16,19 +16,20 @@ For experimental testing, we assembled the combinatorial library by primers carr
 
 | Position| AA to sample|
 | :------:|:-----------:|
-| 5       | IV          |
+| 3       | FIL         |
 | 7       | IV          |
-| 8       | EGKR        |
-| 28      | AE          | 
-| 29      | FILV        | 
-| 33      | RW          | 
-| 36      | AG          | 
-| 50      | FILM        |
-| 53      | HLQR        |
-| 54      | LV          | 
-| 57      | AV          |
-| 60      | EV          |
-| 62      | EKQ         |
+| 19      | FINY        |
+| 27      | ALPV        | 
+| 30      | FHLY        | 
+| 31      | AV          | 
+| 34      | FHLY        | 
+| 35      | AV          |
+| 38      | ALPV        |
+| 46      | IV          | 
+| 56      | VF          |
+| 58      | CFY         |
+| 60      | DFVY        |
+| 62      | AV          |
 
 The following animation shows the [best scoring decoy](./3\)Sequence_design_selection/3E2H_rd2_sequence_design.pdb), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in yellow, and the positions in a proximity of binding interface are colored in XXX, and the site IV epitope shown in orange. 
 
