@@ -11,27 +11,32 @@ In order to maintain the structural stablization of motif, the built protein fol
 Using the provided input files, the 3E2H topology was built and folded using Rosetta FunFolDes, generating approximatelyaround 15000 [decoys](./1\)Foling_trajectory/B1E_C1E_C2H_A1E_A2H/3E2H_folding_design.csv). The top 100 decoys were selected according to several scoring metrics: overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
 
 Following manual inspection, we remodeled and shortened a connecting loop between the motif and a following helix, in between residues 22-27, with the provided [blueprint](./2\)Remodel_fix_connection/3E2H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. The shortened template subsequently served as template for a second round of 
-constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml). The decoys generated from second round of sequence design were [provided](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml). Based on an ensemble of the 50 best decoys according to total energy, we selected 12 core positions, including 4 potential positions for disulfide formation, and built a sequence library for combinatorial sampling of a restricted set of amino acids for the selected positions. 
+constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml). The decoys generated from second round of sequence design were [provided](./3\)Sequence_design_selection/3E2H.minisilent.gz). Based on an ensemble of the 100 best decoys according to total energy, we selected 7 core positions and 6 potential positions close to the binding interface to build a sequence library for combinatorial sampling of a restricted set of amino acids for the given positions (Fig.S3). 
 
-For experimental testing, we designed a combinatorial library sampling a defined diversity in 12 critical core positions, as detailed [here](./B1H_A1H_B2E_A2H/output/). 
+### 3E2H library design and testing 
+For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 13 critical positions, as detailed below.
+
+| Position| AA to sample|
+| :------:|:-----------:|
+| 5       | IV          |
+| 7       | IV          |
+| 8       | EGKR        |
+| 28      | AE          | 
+| 29      | FILV        | 
+| 33      | RW          | 
+| 36      | AG          | 
+| 50      | FILM        |
+| 53      | HLQR        |
+| 54      | LV          | 
+| 57      | AV          |
+| 60      | EV          |
+| 62      | EKQ         |
+
+
 The library was screened using yeast surface display followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
 
 The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models). All protein sequences and their computed enrichments under selection for binding to D25, 5C4, or D25+chymotrypsin / 5C4 + chymotrypsin can be found [here](./B1H_A1H_B2E_A2H/output/3H1L_02_sequences_enrichment.csv). 
 
-### 3E2H library design and testing 
-| Position| AA to sample|
-| :------:|:-----------:|
-| 29      | EL          |
-| 39      | MLA         |
-| 42      | CT          |
-| 45      | AVILMFW     | 
-| 46      | CD          | 
-| 49      | MLFIW       | 
-| 66      | AVILMFW     | 
-| 69      | AVILMFW     |
-| 73      | AVILMFW     |
-| 74      | CR          | 
-| 76      | QAVLMFW     |
-| 80      | ACIFW       |
+
 
 The following animation shows the best scoring decoy, which was chosen as a template to select critical core positions for combinatorial sampling. Selected positions encoded in the combinatorial library are highlighted in yellow, the site 0 epitope shown in purple. 
