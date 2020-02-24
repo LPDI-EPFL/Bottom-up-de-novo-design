@@ -9,15 +9,15 @@ It is important to note that while each motif was relatively frequently found in
 The motifs were extracted from previously solved peptide-bound structure with their target antibodies. First, we simply extended around 3-4 helical turns for each epitope by using Rosetta remodel. To assembly the de novo backbone containing 
 
 
-a beta sheet with four strands and packing with two helices, we used the TopoBuilder to modularly assemble those ideal structural elements together with motifas shown in the [sketch](./1\)Folding_trajectory/input_4E2H/A1E_B2H_C1E_D1E_D2H_B1E/sketch.pdb). The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Folding_trajectory/input_4E2H/4E2H.json).   
+a beta sheet with four strands and packing with two helices, we used the TopoBuilder to modularly assemble those ideal structural elements together with motifas shown in the [sketch](./1\)Folding_trajectory/input_4H/A1H_B1H/sketch.pdb). The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Folding_trajectory/input_4H/twoMoitf.json).   
  
 ### 4H folding and design 
 Using the provided [input files](./1\)Folding_trajectory/input_4H), the 4H topology was built and folded using Rosetta FunFolDes, generating approximately around [10000 decoys](./1\)Folding_trajectory/4H_folding_pose.csv). Around 300 decoys were selected according to several scoring metrics: overall energy, core packing and RMSD drifting for both epitopes, and the best scoring decoys were inspected manually. 
 
-Following manual inspection, we increased the length of one residue in a connecting loop linking in between supporting strand and motif spanning from residue 40-42, and remodeled several connecting loops to enforce the formation of secondary structures at the terminus of loop structure. The exact residues need to adapt the loop remodeling are listed in [blueprint](./2\)Remodel_fix_connection/4E2H_rd1_blueprint). For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel algorithm, use: 
+Following manual inspection, we increased the length of one residue in a connecting loop linking in between supporting strand and motif spanning from residue 40-42, and remodeled several connecting loops to enforce the formation of secondary structures at the terminus of loop structure. The exact residues need to adapt the loop remodeling are listed in [blueprint](./2\)Remodel_fix_connection/4H_rd1_blueprint). For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel algorithm, use: 
 
 ```
-PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 4E2H_folding_rd1.pdb -remodel:blueprint 4E2H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
+PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 4H_folding_rd1.pdb -remodel:blueprint 4H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
 ```  
 
 The remodeled template subsequently served as template for the constrianed sequence design using the [provided script](./3\)Sequence_design_selection/4E2H_layerdesign_protocol.xml) with a defined [Resfile](./3\)Sequence_design_selection/4E2H_rd2_Resfile) to specify the positions to be sampled. The Design script can be executed by the following command line:  
