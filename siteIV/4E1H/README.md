@@ -24,9 +24,13 @@ The decoys generated from the first round of design step still remain several st
 PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @FunFoldDes_flags -s 4E1H_design_rd2.pdb  -parser:protocol 4E1H_rd2_FunFoldDes.xml
 ```
 
-After FunFoldDes, an additional constrained sequence design was performed to   
+The sequences generated from FunFoldDes are provided [here](./3\)FunFold_Design/4E1H_rd2_FunFoldDes_decoys.csv). After FunFoldDes, an additional constrained sequence design was performed to introduce the disulfide bridge and sample the allowed surface positions close to the potential binding interface. We then chose the best decoy based on the total Rosetta energy to run this final design step. All the input files needed for running design script are provided [here](./4\)Final_sequence_design). The command line used to execute the design step is following: 
 
-Based on an ensemble of the [100 best decoys](./3\)FunFold_Design/4E1H_rd2_FunFoldDes_decoys.csv) according to total energy, we selected 14 core positions to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S4). 
+```
+PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @flags -s 4E1H_FFD_rd3.pdb  -parser:protocol 4E1H_rd3_sequence_des.xml
+```
+
+Based on an ensemble of the [100 best decoys](./4\)Final_sequence_design/4E1H_rd3_design_decoy.csv) according to total energy, we selected 14 core positions to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S4). 
 
 ### 4E1H library design and testing 
 For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 14 critical positions, as detailed below.
@@ -48,7 +52,7 @@ For experimental testing, we assembled the combinatorial library by primers carr
 | 60      | DFVY        |
 | 62      | AV          |
 
-The following animation shows the [best scoring decoy](./3\)Sequence_design_selection/3E2H_rd2_sequence_design.pdb), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in yellow, and the positions in a proximity of binding interface are colored in XXX, and the site IV epitope shown in orange. 
+The following animation shows the [best scoring decoy](./4E1H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
 
-The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here](./4\)NGS_seq/3E2H_NGS.csv). The computational models of the sequences with the strongest enrichments can be found [here](). Followed with next-generation sequencing, we then choose around 10 sequences showing the strongest enrichments for recombinant expression and biophysical characterization.
+The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here](./5\)NGS_seq/4E1H_NGS.csv). The computational models of the sequences with the strongest enrichments can be found [here](). Followed with next-generation sequencing, we then choose around 8 sequences showing the strongest enrichments for recombinant expression and biophysical characterization.
 
