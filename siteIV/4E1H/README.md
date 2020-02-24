@@ -18,12 +18,18 @@ PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease -s 4E1H_folding_
 ``` 
 The decoys generated from the first round of sequence design were [provided](./2\)Remodel_fix_connection_design/4E1H_rd1_seqDesign_score.sc). 
 
-The decoys generated from the first round of design step still remain several structural flaws can be improved (i.e. the missing hydrogen bond pairing at the b sheet). Thus, we used FunFolDes to refine/refold the 4E1H topology for a better topological arrangement.   
+The decoys generated from the first round of design step still remain several structural flaws can be improved (i.e. the missing hydrogen bond pairing at the b sheet). Thus, we used FunFolDes to refine/refold the 4E1H topology for adjusting the topological arrangement. All the input files needed for running FunFolDes are provided [here](./3\)FunFold_Design). The FunFolDes script can be easily executed by:  
 
-Based on an ensemble of the 100 best decoys according to total energy, we selected 7 core positions and 6 potential positions close to the binding interface to build a sequence library for combinatorial sampling of a restricted set of amino acids for the given positions (Fig.S3). 
+```
+PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease @FunFoldDes_flags -s 4E1H_design_rd2.pdb  -parser:protocol 4E1H_rd2_FunFoldDes.xml
+```
+
+After FunFoldDes, an additional constrained sequence design was performed to   
+
+Based on an ensemble of the [100 best decoys](./3\)FunFold_Design/4E1H_rd2_FunFoldDes_decoys.csv) according to total energy, we selected 14 core positions to construct a sequence library for combinatorial sampling of a restricted set of amino acids which was suggested by Rosetta (Fig.S4). 
 
 ### 4E1H library design and testing 
-For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 13 critical positions, as detailed below.
+For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 14 critical positions, as detailed below.
 
 | Position| AA to sample|
 | :------:|:-----------:|
