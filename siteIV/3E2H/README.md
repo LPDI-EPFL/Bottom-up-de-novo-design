@@ -18,7 +18,7 @@ For experimental testing, we assembled the combinatorial library by primers carr
 
 | Position| AA to sample|
 | :------:|:-----------:|
-| 5       | ![IV](https://placehold.it/15/f03c15/000000?text=IV) `IV`      |
+| 5       | IV          |
 | 7       | IV          |
 | 8       | EGKR        |
 | 28      | AE          | 
@@ -33,7 +33,11 @@ For experimental testing, we assembled the combinatorial library by primers carr
 | 62      | EKQ         |
 
 
-The library was screened using yeast surface display followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
+The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here]()
+
+The sequences display the strongest enrichments can be found [here]
+
+followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
 
 The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models). All protein sequences and their computed enrichments under selection for binding to D25, 5C4, or D25+chymotrypsin / 5C4 + chymotrypsin can be found [here](./B1H_A1H_B2E_A2H/output/3H1L_02_sequences_enrichment.csv). 
 
