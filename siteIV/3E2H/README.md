@@ -11,7 +11,7 @@ In order to maintain the structural stablization of motif, the built protein fol
 Using the provided input files, the 3E2H topology was built and folded using Rosetta FunFolDes, generating approximatelyaround 15000 [decoys](./1\)Foling_trajectory/B1E_C1E_C2H_A1E_A2H/3E2H_folding_design.csv). The top 100 decoys were selected according to several scoring metrics: overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
 
 Following manual inspection, we remodeled and shortened a connecting loop between the motif and a following helix, in between residues 22-27, with the provided [blueprint](./2\)Remodel_fix_connection/3E2H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. The shortened template subsequently served as template for a second round of 
-constrained sequence design and building a disulfide bridge using the [provided script]
+constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml)
 Based on an ensemble of the 50 best decoys according to total energy, we selected 12 core positions, including 4 potential positions for disulfide formation, and built a sequence library for combinatorial sampling of a restricted set of amino acids for the selected positions. 
 
 For experimental testing, we designed a combinatorial library sampling a defined diversity in 12 critical core positions, as detailed [here](./B1H_A1H_B2E_A2H/output/). 
