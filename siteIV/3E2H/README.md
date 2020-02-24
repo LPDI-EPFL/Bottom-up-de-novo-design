@@ -5,7 +5,7 @@ The de novo designed 3E2H topology accommodates the RSV antigenic site IV, a mot
 The antigenic site IV was extracted from the peptide-bound structure with a potent neutralizing antibody 101F (PDB 3O41, chain F). The epitope region consists of residues 429-434 according to the numbering of RSVF structure.
 
 In order to maintain the structural stablization of motif, the built protein fold should avoid to start/end with the motif  
-,meaning that the chosen connectivity should always be designed to link the motif at both terminus. For 3E2H, we used the TopoBuilder to built two supporting strands to form a beta-sheet with motif and one helix in another layer to pack against building sheet as shown in the [sketch]() and the illustration below. Each helix was built with a length of 20 amino acids, with a distance between each other and to the site 0 epitope of 11 A. The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Foling_trajectory/3E2H.json). 
+,meaning that the chosen connectivity should always be designed to link the motif at both terminus. For 3E2H, we used the TopoBuilder to built two supporting strands to form a beta-sheet with motif and one helix in another layer to pack against building sheet as shown in the [sketch](./1\)Foling_trajectory/B1E_C1E_C2H_A1E_A2H/input_3E2H/sketch.pdb) and the illustration below. Each helix was built with a length of 20 amino acids, with a distance between each other and to the site 0 epitope of 11 A. The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Foling_trajectory/3E2H.json). 
 
 TopoBuilder json configuration file: 
 ```
