@@ -81,7 +81,7 @@ Using the provided input files, the 3E2H topology was built and folded using Ros
 Following manual inspection, we remodeled and shortened a connecting loop between the motif and a following helix, in between residues 22-27, with the provided [blueprint](./2\)Remodel_fix_connection/3E2H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel, use: 
 
 ```
-PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s   -remodel:blueprint 3E2H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
+PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 3E2H_folding_rd1.pdb -remodel:blueprint 3E2H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
 ``` 
 
 The shortened template subsequently served as template for a second round of constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml).The Design script can be executed by the following command line:  
