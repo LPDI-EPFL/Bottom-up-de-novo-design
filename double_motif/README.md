@@ -1,15 +1,18 @@
 # Assembly of a dual motif scaffold accommodating RSVF site II and RSVG 2D10 epitope
-To showcase the ability of assembling a topology de novo tailored to fit two distinct binding motifs, we built a 4H topology with the RSVF site II and RSVG 2D10 motif (PDB codes 3IXT and XXX, respectively). 
+To showcase the ability of assembling a topology de novo tailored to fit two distinct binding motifs, we built a 4H topology embedded with the RSVF site II (PDB codes 3IXT) and RSVG 2D10 motif (PDB codes 5WN9) adapting to HLH and HLL conformation, respectively. 
 
-It is important to note that while each motif was relatively frequently found in the natural protein repertoire, the number of proteins available in the natural protein repertoire that can simultaneously accommodate both motifs was extremely limited. 
+It is important to note that while each motif was relatively frequently found in the natural protein repertoire, the number of proteins available in the natural protein repertoire that can simultaneously accommodate both motifs was extremely limited as shown in the figure below. 
 
 ![](Mota_2D10_scaffold_search.png)
 
-## 4E2H topology construction and design (the topology contains three ideal beta strand, two ideal helices and a motif) 
-As mentioned in the description of [3E2H](../3E2H/README.md), the motif was extracted from previously solved peptide-bound structure with target antibody. To build the de novo backbone containing a beta sheet with four strands and packing with two helices, we used the TopoBuilder to modularly assemble those ideal structural elements together with motifas shown in the [sketch](./1\)Folding_trajectory/input_4E2H/A1E_B2H_C1E_D1E_D2H_B1E/sketch.pdb). The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Folding_trajectory/input_4E2H/4E2H.json).   
+## 4H topology construction and design (the topology contains four helices to carry two functional motifs) 
+The motifs were extracted from previously solved peptide-bound structure with their target antibodies. First, we simply extended around 3-4 helical turns for each epitope by using Rosetta remodel. To assembly the de novo backbone containing 
+
+
+a beta sheet with four strands and packing with two helices, we used the TopoBuilder to modularly assemble those ideal structural elements together with motifas shown in the [sketch](./1\)Folding_trajectory/input_4E2H/A1E_B2H_C1E_D1E_D2H_B1E/sketch.pdb). The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Folding_trajectory/input_4E2H/4E2H.json).   
  
-### 4E2H folding and design 
-Using the provided [input files](./1\)Folding_trajectory/input_4E2H/), the 4E2H topology was built and folded using Rosetta FunFolDes, generating approximately around [10000 decoys](./1\)Folding_trajectory/4E2H_folding_pose.csv). The top 300 decoys were selected according to several scoring metrics: overall energy, core packing and match of composition of secondary structures, and the best scoring decoys were inspected manually. 
+### 4H folding and design 
+Using the provided [input files](./1\)Folding_trajectory/input_4H), the 4H topology was built and folded using Rosetta FunFolDes, generating approximately around [10000 decoys](./1\)Folding_trajectory/4H_folding_pose.csv). Around 300 decoys were selected according to several scoring metrics: overall energy, core packing and RMSD drifting for both epitopes, and the best scoring decoys were inspected manually. 
 
 Following manual inspection, we increased the length of one residue in a connecting loop linking in between supporting strand and motif spanning from residue 40-42, and remodeled several connecting loops to enforce the formation of secondary structures at the terminus of loop structure. The exact residues need to adapt the loop remodeling are listed in [blueprint](./2\)Remodel_fix_connection/4E2H_rd1_blueprint). For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel algorithm, use: 
 
