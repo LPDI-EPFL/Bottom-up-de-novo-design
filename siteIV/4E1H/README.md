@@ -54,5 +54,7 @@ For experimental testing, we assembled the combinatorial library by primers carr
 
 The following animation shows the [best scoring decoy](./4E1H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the site IV epitope shown in orange. 
 
+![](./4E1H.gif)
+
 The library was screened using yeast surface display under double selective pressure: binding to 101F antibodies, and residual binding after pre-treatment of the nonspecific protease chymotrypsin to ensure the designed topology presents the functional motif in its native conformation, while maintaining the stable protein fold (Fig.S8). For each screening condition, the best 1-2% of clones were sorted, and the sorted populations were bulk-sequenced using next-generation sequencing. We then computed an enrichment score for each sequence, which represents the frequency of each sequence under stringed selection conditions. All protein sequences and their computed enrichments under selection for binding to 101F, or 101F+chymotrypsin can be found [here](./5\)NGS_seq/4E1H_NGS.csv). The computational models of the sequences with the strongest enrichments can be found [here](). Followed with next-generation sequencing, we then choose around 8 sequences showing the strongest enrichments for recombinant expression and biophysical characterization.
 
