@@ -1,11 +1,13 @@
 # Design of 3E2H topology to accommodate the RSVF antigenic site IV (101F epitope) 
-# 3E2H (the topology contains two ideal beta strand, two ideal helices and a motif) 
+## 3E2H (the topology contains two ideal beta strand, two ideal helices and a motif) 
 The de novo designed 3E2H topology accommodates the RSV antigenic site IV, a motif consisting of a bulged beta strand.  
 
 The antigenic site IV was extracted from the peptide-bound structure with a potent neutralizing antibody 101F (PDB 3O41, chain F). The epitope region consists of residues 429-434 according to the numbering of RSVF structure.
 
 In order to maintain the structural stablization of motif, the built protein fold should avoid to start/end with the motif  
-,meaning that the chosen connectivity should always be designed to link the motif at both terminus. The topology was assembled using TopoBuilder with a  [configuration/input files](./). After folding and design using Rosetta FunFolDes, the best designs were filtered according to overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
+,meaning that the chosen connectivity should always be designed to link the motif at both terminus. The topology was assembled using TopoBuilder with a all the tunable parameters specified in json file [1)Foling_trajectory](./1)Foling_trajectory/). 
+
+After folding and design using Rosetta FunFolDes, the best designs were filtered according to overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
 For experimental testing, we designed a combinatorial library sampling a defined diversity in 12 critical core positions, as detailed [here](./B1H_A1H_B2E_A2H/output/). 
 The library was screened using yeast surface display followed by next-generation sequencing, followed by recombinant expression and biophysical characterization of 13 selected clones. 
 
