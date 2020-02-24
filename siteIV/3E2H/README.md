@@ -7,7 +7,7 @@ The antigenic site IV was extracted from the peptide-bound structure with a pote
 In order to maintain the structural stablization of motif, the built protein fold should avoid to start/end with the motif  
 ,meaning that the chosen connectivity should always be designed to link the motif at both terminus. The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Foling_trajectory/3E2H.json). 
 
-# 3E2H folding and design 
+### 3E2H folding and design 
 Using the provided input files, the 3E2H topology was built and folded using Rosetta FunFolDes, generating approximatelyaround 15000 decoys were generated [decoys](./1\)Foling_trajectory/B1E_C1E_C2H_A1E_A2H/3E2H_folding_design.csv). The top 100 decoys were selected according to several scoring metrics: overall energy, core packing and ramachandran scores, and the best scoring decoys were inspected manually. 
 
 Following manual inspection, we remodeled and shortened the connecting loops between the different SSEs, in particular between residues 
@@ -18,7 +18,7 @@ The library was screened using yeast surface display followed by next-generation
 
 The computational models of the sequences with the strongest enrichments can be found [here](./output/pdb_files_of_best_models). All protein sequences and their computed enrichments under selection for binding to D25, 5C4, or D25+chymotrypsin / 5C4 + chymotrypsin can be found [here](./B1H_A1H_B2E_A2H/output/3H1L_02_sequences_enrichment.csv). 
 
-# 3H1L_02 library design and testing 
+### 3E2H library design and testing 
 | Position| AA to sample|
 | :------:|:-----------:|
 | 29      | EL          |
