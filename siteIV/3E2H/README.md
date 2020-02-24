@@ -87,7 +87,7 @@ PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABA
 The shortened template subsequently served as template for a second round of constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml).The Design script can be executed by the following command line:  
 
 ```
-/work/upcorreia/bin/rosetta_bin/stable/RosettaWeekly/rosetta_scripts.linuxiccrelease @flags -s   -parser:protocol 3E2H_layerdesign_protocol.xml 
+/work/upcorreia/bin/rosetta_bin/stable/RosettaWeekly/rosetta_scripts.linuxiccrelease @3E2H_rd2_flags -s 3E2H_rd2_sequence_design.pdb -parser:protocol 3E2H_layerdesign_protocol.xml 
 ```
 
 The decoys generated from second round of sequence design were [provided](./3\)Sequence_design_selection/3E2H.minisilent.gz). Based on an ensemble of the 100 best decoys according to total energy, we selected 7 core positions and 6 potential positions close to the binding interface to build a sequence library for combinatorial sampling of a restricted set of amino acids for the given positions (Fig.S3). 
