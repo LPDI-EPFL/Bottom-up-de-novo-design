@@ -3,11 +3,24 @@
 As mentioned in the description of [3E2H](../3E2H/README.md), the motif was extracted from previously solved peptide-bound structure with target antibody. In order to build the de novo backbone containing a beta sheet with four strands and packing with a helix, we used the TopoBuilder to modularly assemble those ideal structural elements together with motifas shown in the [sketch](./1\)Folding_trajectory/input_4E1H/A2E_A1E_D1H_B1E_C1E/sketch.pdb). The topology was assembled using TopoBuilder with all the tunable parameters specified in json file [here](./1\)Folding_trajectory/input_4E1H/4E1H.json).   
  
 ### 4E1H folding and design 
-Using the provided [input files](./1\)Foling_trajectory/input_4E1H), the 4E1H topology was built and folded using Rosetta FunFolDes, generating approximately around 10000 decoys. The top 300 decoys(./1\)Folding_trajectory/top_300_folding_pose.zip) were selected according to several scoring metrics: overall energy, core packing and content of secondary structures, and the best scoring decoys were inspected manually. 
+Using the provided [input files](./1\)Foling_trajectory/input_4E1H), the 4E1H topology was built and folded using Rosetta FunFolDes, generating approximately around 10000 decoys. The [top 300 decoys](./1\)Folding_trajectory/top_300_folding_pose.zip) were selected according to several scoring metrics: overall energy, core packing and content of secondary structures, and the best scoring decoys were inspected manually. 
 
-Following manual inspection, we remodeled and shortened a connecting loops linking between supporting strand and motif, which is between residues 8-12, and also extending 3 residues at the C-terminus with the provided [blueprint](./2\)Remodel_fix_connection_design/4E1H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. The shortened template subsequently served as template for a second round of 
+Following manual inspection, we remodeled and shortened a connecting loops linking between supporting strand and motif, which is between residues 8-12, and also extending 3 residues at the C-terminus with the provided [blueprint](./2\)Remodel_fix_connection_design/4E1H_rd1_blueprint) to specify the exact residues need to adapt the loop remodeling. For instructions regarding the Rosetta remodel application, please see the offical Rosetta documentation. To run remodel, use: 
 
-constrained sequence design and building a disulfide bridge using the [provided script](./3\)Sequence_design_selection/3E2H_layerdesign_protocol.xml). The decoys generated from second round of sequence design were [provided](./3\)Sequence_design_selection/3E2H.minisilent.gz). Based on an ensemble of the 100 best decoys according to total energy, we selected 7 core positions and 6 potential positions close to the binding interface to build a sequence library for combinatorial sampling of a restricted set of amino acids for the given positions (Fig.S3). 
+```
+PATH/TO/ROSETTA/main/source/bin/remodel.linuxgccrelease -database PATH/TO/DATABASE -s 4E1H_folding_rd1.pdb -remodel:blueprint 4E1H_rd1_blueprint -nstruct 50 -remodel:use_pose_relax true -ex1 -ex2 
+```  
+
+The shortened template subsequently served as template for the first round of sequence design using the [provided script](./2\)Remodel_fix_connection_design/4E1H_rd1_fastdesign_.xml) with a defined [Resfile](./2\)Remodel_fix_connection_design/Resfile) to specify the positions to be sampled. The Design script can be executed by the following command line:  
+
+```
+PATH/TO/ROSETTA/main/source/bin/rosetta_scripts.linuxiccrelease -s 4E1H_folding_rd1_design.pdb -parser:protocol 4E1H_rd1_fastdesign_.xml
+``` 
+The decoys generated from the first round of sequence design were [provided](./2\)Remodel_fix_connection_design/4E1H_rd1_seqDesign_score.sc). 
+
+The decoys generated from the first round of design step still remain several structural flaws can be improved (i.e. the missing hydrogen bond pairing at the b sheet). Thus, we used FunFolDes to refine/refold the 4E1H topology for a better topological arrangement.   
+
+Based on an ensemble of the 100 best decoys according to total energy, we selected 7 core positions and 6 potential positions close to the binding interface to build a sequence library for combinatorial sampling of a restricted set of amino acids for the given positions (Fig.S3). 
 
 ### 4E1H library design and testing 
 For experimental testing, we assembled the combinatorial library by primers carrying the degenerate codon to cover a defined diversity in 13 critical positions, as detailed below.
