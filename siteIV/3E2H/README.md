@@ -18,7 +18,7 @@ For experimental testing, we assembled the combinatorial library by primers carr
 
 | Position| AA to sample|
 | :------:|:-----------:|
-| 5       | ![IV](https://placehold.it/15/f03c15/000000?text=IV) `#f03c15`      |
+| 5       | ![IV](https://placehold.it/15/f03c15/000000?text=IV) `IV`      |
 | 7       | IV          |
 | 8       | EGKR        |
 | 28      | AE          | 
