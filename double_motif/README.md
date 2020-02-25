@@ -52,7 +52,7 @@ For experimental testing, we assembled the combinatorial library by primers carr
 | 75      | LV          |
 | 78      | LV          |
 
-The following animation shows the [best scoring decoy](./4H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the sampled surface positions are colored in salmon red. Mota epitope and 2D10 epitope is shown in cyan and wheat color, respectively. 
+The following animation shows the [best scoring decoy](./4H.gif), which was chosen as a template to select critical core positions for combinatorial sampling. Selected core positions encoded in the combinatorial library are highlighted in green, and the sampled surface positions are shown in salmon red. Mota epitope and 2D10 epitope are colored in cyan and wheat, respectively. 
 
 ![](./4H.gif)
 
