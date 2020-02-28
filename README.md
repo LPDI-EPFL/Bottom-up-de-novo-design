@@ -4,7 +4,7 @@
 - [Software prerequisites](#software_prerequisites)
    
 ## Description
-This repository contains additional data presented in the manuscript ["A bottom-up approach for *de novo* design of functional proteins"](link). For each topology designed using [TopoBuilder](link), this repository provides the input files used for the computational design procedure, as well as score files and models of the designed proteins. 
+This repository contains additional data presented in the manuscript ["A bottom-up approach for *de novo* design of functional proteins"](link). For further details about the methods and how to install TopoBuilder, please refer to the [TopoBuilder repository](https://github.com/LPDI-EPFL/topobuilder/tree/releasepy2). For each topology designed using TopoBuilder, this repository provides the input files used for the computational design procedure, as well as score files and models of the designed proteins. 
 The repository is organized by the functional motifs that were stabilized, which are epitopes targeted by RSV neutralizing antibodies. 
 
 ![](./motifs.png)
